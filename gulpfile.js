@@ -30,7 +30,7 @@ function browserSyncDesarrollo(done) {
 	browserSync.init({
 		injectChanges: true,
 		server: {
-			baseDir: "distribution/dev",
+			baseDir: "docs/dev",
 			serveStaticOptions: {
 				extensions: ['html']
 			},

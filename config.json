@@ -7,12 +7,12 @@
             "!html/components/*.pug"
          ],
          "destino": {
-            "dev": "distribution/dev/html",
+            "dev": "docs/dev/html",
             "prod": "distribution/prod/html"
          },
          "watcher": "html/**/*.pug",
          "recargar": {
-            "dev": "distribution/dev/**.html",
+            "dev": "docs/dev/**.html",
             "prod": "distribution/prod/**.html"
          }
       }
