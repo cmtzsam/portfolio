@@ -1,5 +1,7 @@
 local
 config.txt
+gulpfile.js
+.gitignore
 
 # Logs
 logs
