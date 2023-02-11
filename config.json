@@ -1,0 +1,20 @@
+{
+   "directorios": {
+      "pug": {
+         "fuente": [
+            "html/**/*.pug",
+            "!html/layout/*.pug",
+            "!html/components/*.pug"
+         ],
+         "destino": {
+            "dev": "dist/dev/html",
+            "prod": "dist/prod/html"
+         },
+         "watcher": "html/**/*.pug",
+         "recargar": {
+            "dev": "dist/dev/**.html",
+            "prod": "dist/prod/**.html"
+         }
+      }
+   }
+}
