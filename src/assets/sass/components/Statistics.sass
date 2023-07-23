@@ -1,0 +1,42 @@
+@import '../global/variables.sass'
+
+.Statistics
+  padding: 70px 0 100px
+  background: $darkcustom
+  @include maxPhablet
+    padding: 50px 0
+  @include maxMobile
+    padding: 40px 0
+    margin-bottom: 0px
+  .o-grid-row
+    .col
+      &:nth-child(2)
+        .Statistics--info
+          @include minPhablet
+            border-left: 1px solid #ccc
+            border-right: 1px solid #ccc
+          @include maxPhablet
+            margin: 0 0 50px
+          @include maxMobile
+            margin: 30px auto
+            padding: 30px 0
+            border-top: 1px solid #ccc
+            border-bottom: 1px solid #ccc 
+      &:last-child
+        .Statistics--info
+          @include maxMobile
+            margin-bottom: 0
+
+  &--info
+    @include maxMobile
+      max-width: 300px
+      margin-left: auto
+      margin-right: auto
+
+    h2, p
+      text-align: center
+      color: white
+    h2
+      font-size: 4rem
+      @include maxMobile
+        font-size: 3rem

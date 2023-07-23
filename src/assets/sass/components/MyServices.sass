@@ -1,0 +1,73 @@
+@import '../global/variables.sass'
+
+.MyServices
+  
+  padding: 50px 0
+  position: relative
+
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 15%
+    background-color: $purplelight
+    @include maxTabletPortrait
+      display: none
+
+  &--grid
+    position: relative
+    z-index: 2
+
+  &--info
+    width: 100%
+    max-width: 600px
+    margin: 0 auto
+    padding: 15px
+
+    h4
+      color: $purplelight
+      font-family: $fontprincipal
+      font-weight: 600
+    h2
+      color: $greenlight
+      margin: 10px 0
+      line-height: 1.25
+    p
+      line-height: 1.75
+    a
+      &.link
+        color: green
+        text-decoration: underline
+        font-weight: 600      
+    ul
+      display: flex
+      flex-wrap: wrap
+      margin: 30px 0 15px
+      @include maxMobile
+        display: block
+      li
+        width: 50%
+        @include maxMobile
+          width: 100%
+        @include flexCenter
+        margin-bottom: 20px
+        span
+          width: 7px
+          height: 7px
+          // border-radius: 50%
+          background-color: $yellowbase
+          margin: 0 10px 0 0
+          @include flexCenter
+          color: white
+          font-family: $fonttitulos
+          line-height: 1
+          text-align: center
+          font-size: 1.2rem
+        p
+          line-height: 1.1
+          font-size: 1rem
+          margin-right: auto
+
+

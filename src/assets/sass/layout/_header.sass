@@ -1,0 +1,42 @@
+@import '../global/variables.sass'
+
+.HeaderMainMenu
+  border-bottom: 1px solid #ccc
+
+  &--nav
+    height: 80px
+    @include flexCenter
+
+  &--logo
+    display: block
+    width: 100%
+    max-width: 250px
+
+  &--openmenu
+    display: none
+    @include maxPhablet
+      display: block
+
+  &--menu
+    width: 100%
+    @include flexCenter
+
+  &--menulist
+    margin: 0 auto
+    @include flexCenter
+
+  &--link
+    margin: 0 15px
+    a
+      font-size: 15px
+  
+  &--menuactions
+    div
+      display: none
+    .contact
+      font-size: 14px
+      padding: 8px 16px
+      border-radius: 6px
+      background-color: black
+      color: white
+      text-align: center

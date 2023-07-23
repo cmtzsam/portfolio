@@ -1,0 +1,89 @@
+@import '../global/variables.sass'
+
+.RecentProjects
+  background-color: $purplelight
+  padding: 50px 0
+  overflow: hidden
+  @include tabletPortraitToDesktopSmall
+    padding: 15px 0 50px
+  @include phabletToTablet
+    padding: 50px 0
+  h2
+    color: $greenlight
+    margin-bottom: 50px
+
+  &--project
+    text-align: right
+    background-color: $purplelight-04
+    width: 100%
+    max-width: 1024px
+    margin: 0 auto 30px
+    // border-radius: 6px    
+    @include flexCenter
+    @include maxTabletPortrait
+      display: block
+      text-align: center
+      padding: 20px 20px 40px
+    &-data
+      width: 100%
+      max-width: 470px
+      padding: 30px 15px
+      @include phabletToTablet
+        padding: 20px
+      @include maxTabletPortrait
+        max-width: 600px
+        margin: 0 auto 20px
+    &-logo
+      width: 100%
+      max-width: 170px
+      margin-left: auto
+      @include maxTabletPortrait
+        margin-right: auto
+    h3, p
+      color: white
+    h3
+      margin: 20px 0
+      line-height: 1.5
+      color: $greenlight
+    p
+      line-height: 1.5
+      font-size: 1.1rem
+    
+    &-details
+      margin: 20px 0 
+      h4
+        color: $yellowbase
+        margin: 0 0 10px
+      p
+        font-size: 1.05rem
+        margin: 10px 0 20px
+        line-height: 1
+        span
+          color: $greenlight
+          font-weight: bold
+      span.badge
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        padding: 5px 10px
+        font-size: .9rem
+        margin: 10px 5px 
+        font-weight: 600
+        color: $darkcustom
+        background-color: $greenlight
+        border-radius: 3px
+
+    // Project Picture 
+    &-pic
+      width: 100%
+      max-width: 500px
+      @include maxTabletPortrait
+        margin: 0 auto 
+      img
+        position: relative
+        right: -60px
+        @include phabletToTablet
+          right: -15px
+        @include maxTabletPortrait
+          right: 0
+
