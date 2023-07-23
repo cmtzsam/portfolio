@@ -6,11 +6,11 @@
     <div class="o-container">
       <div class="HeroBanner--intro">
         <div class="HeroBanner--text">
-          <h1>Carlos A<i>.</i> <span>Mtz<i>.</i> Samaniego</span> </h1>
+          <h1>Carlos A. <span>Mtz. Samaniego</span> </h1>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis perferendis non, ullam molestias obcaecati deleniti quos sapiente laudantium! Hic ut quas aperiam enim, consequuntur laborum odit pariatur minus maiores! 
             <br>
-            <router-link to="/about">Ver mas</router-link>
+            <router-link to="/about"> <span>></span> Descargar Curriculm</router-link>
           </p>
         </div>
 

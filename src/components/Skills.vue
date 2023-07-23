@@ -44,7 +44,7 @@
         <!-- End for skills -->
       </div>
       </div>
-      <router-link to="/about" class="o-btn md-btn btn-outline">Ver todas las habilidades</router-link>
+      <router-link to="/about" class="o-btn md-btn btn-outline"><span>></span> Ver todas las habilidades</router-link>
     </div>
   </section>
 </template>

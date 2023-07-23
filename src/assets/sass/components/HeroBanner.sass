@@ -2,6 +2,11 @@
 
 .HeroBanner
   position: relative
+
+  background-image: url('../../images/bgbanner.jpg')
+  background-position: 100% 100%
+  background-attachment: fixed
+
   &::before
     content: ""
     position: absolute
@@ -37,6 +42,7 @@
       z-index: 3
       position: relative
       font-size: 2.5rem
+      color: $purplelight
       @include minDesktopSize
         font-size: 6rem
         white-space: nowrap
@@ -67,10 +73,10 @@
         margin-left: 70px
         @include maxTabletLandscape
           margin-left: 0
-      i
-        font-style: normal
-        color: $greenlight
-        font-family: 'Inter', sans-serif
+      // i
+      //   font-style: normal
+      //   color: $greenlight
+      //   font-family: 'Inter', sans-serif
     
     p
       width: 100%
@@ -83,6 +89,9 @@
         font-weight: 600
         text-decoration: underline
         color: inherit
+        color: $greenlight
+        span
+          color: $yellowbase
       @include minTabletLandscape
         margin-left: 60px
         margin-top: 0
