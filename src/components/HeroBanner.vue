@@ -10,7 +10,7 @@
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis perferendis non, ullam molestias obcaecati deleniti quos sapiente laudantium! Hic ut quas aperiam enim, consequuntur laborum odit pariatur minus maiores! 
             <br>
-            <router-link to="/about"> <span>></span> Descargar Curriculm</router-link>
+            <router-link to="/about"> > <span>Descargar Curriculm</span> </router-link>
           </p>
         </div>
 
