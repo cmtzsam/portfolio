@@ -9,6 +9,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@egjs/flicking-plugins": "^4.7.1",
+    "@egjs/vue3-flicking": "^4.10.8",
+    "swiper": "^10.0.4",
     "vue": "^3.3.4",
     "vue-router": "^4.2.2"
   },
