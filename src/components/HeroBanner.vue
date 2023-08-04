@@ -1,11 +1,12 @@
+<script setup>
+import Statistics from "./Statistics.vue";
+</script>
 <script>
 import Flicking from "@egjs/vue3-flicking";
-
 import { Pagination } from "@egjs/flicking-plugins";
-
 export default {
   components: {
-    Flicking,
+    Flicking
   },
 
   data() {
@@ -58,9 +59,10 @@ export default {
                 obcaecati deleniti quos sapiente laudantium! Hic ut quas aperiam enim, consequuntur laborum odit pariatur
                 minus maiores!
                 <br>
-                <router-link to="/about"> > <span>Curriculum Vitae</span> </router-link>
+                <!-- <router-link to="/about"> > <span>Curriculum Vitae</span> </router-link> -->
               </p>
             </div>
+
           </div>
           <div class="col size-sm-12 size-6">
             <div class="HeroBanner--carousel">
@@ -94,6 +96,8 @@ export default {
           </div>
 
         </div>
+
+        <Statistics />
 
       </div>
     </div>

@@ -1,31 +1,39 @@
 @import '../global/variables.sass'
-
 .Statistics
   padding: 50px 0 70px
-  background: $darkcustom
+  position: relative
+  bottom: 0
+  left: 0
+  width: 100%
+  z-index: 6
   @include maxPhablet
     padding: 50px 0
   @include maxMobile
     padding: 40px 0
+    margin-bottom: 40px
+  @include maxMobilePortrait
     margin-bottom: 0px
   .o-grid-row
     .col
       &:nth-child(2)
-        .Statistics--info
-          @include minPhablet
-            border-left: 1px solid rgba(255,255,255,.25)
-            border-right: 1px solid rgba(255,255,255,.25)
-          @include maxPhablet
-            margin: 0 0 50px
-          @include maxMobile
-            margin: 30px auto
-            padding: 30px 0
-            border-top: 1px solid rgba(255,255,255,.25)
-            border-bottom: 1px solid rgba(255,255,255,.25) 
+        @include minPhablet
+          border-left: 1px solid rgb(163 , 218 , 88 , .4)
+          border-right: 1px solid rgb(163 , 218 , 88 , .4)
+        // @include maxPhablet
+        //   margin: 0 0 50px
+        // @include maxMobile
+        //   margin: 30px auto
+        //   padding: 30px 0
+        // @include maxMobilePortrait
+        //   margin: 30px auto
+        //   padding: 30px 0
+          // border-top: 1px solid rgb(163 , 218 , 88 , .4)
+          // border-bottom: 1px solid rgb(163 , 218 , 88 , .4) 
       &:last-child
         .Statistics--info
           @include maxMobile
             margin-bottom: 0
+            padding-bottom: 0
 
   &--info
     @include maxMobile
@@ -37,7 +45,62 @@
       text-align: center
       color: white
     h2
-      font-size: 4rem
+      font-size: 3.3rem
       color: $greenlight
       @include maxMobile
-        font-size: 3rem
+        font-size: 2.5rem
+    p
+      font-size: .9rem
+
+
+
+
+// If is used in herobanner
+.HeroBanner
+  .Statistics
+    @include minTabletPortrait
+      position: absolute
+      max-width: 40%
+      left: 10%
+      bottom: 0
+      padding-top: 0
+    @include tabletLandscapeDesktop1280
+      max-width: 50%
+      left: 0%
+    @include tabletPortraitToTabletLandscape
+      max-width: 50%
+      left: 0%
+    @include mobileToPortrait
+      background-color: $darkcustom
+      position: relative
+      max-width: 530px
+      margin: 0 auto
+      z-index: 6
+      padding: 30px 0 0
+      top: -100px
+    @include maxMobileLandscape
+      padding: 10px 0 50px
+    &--info 
+      h2
+        @include tabletLandscapeDesktop1280
+          font-size: 2.75rem
+        @include tabletPortraitToTabletLandscape
+          font-size: 2.5rem
+        @include mobileToPortrait
+          font-size: 2.5rem
+        @include maxMobileLandscape
+          font-size: 2.25rem
+        @include maxMobilePortrait
+          font-size: 1.75rem
+      p
+        @include tabletLandscapeDesktop1280
+          font-size: .8rem
+        @include tabletPortraitToTabletLandscape
+          font-size: .75rem
+        @include mobileToPortrait
+          font-size: .7rem
+        @include maxMobileLandscape
+          font-size: .75rem
+        @include maxMobilePortrait
+          font-size: .6rem
+    
