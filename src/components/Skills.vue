@@ -17,6 +17,12 @@
       description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate optio',
       footerImage: 'https://placehold.co/40x40',
       footerText: 'Lorem, ipsum dolor.',
+    },
+    {
+      image: '../src/assets/images/skill1.png',
+      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate optio',
+      footerImage: 'https://placehold.co/40x40',
+      footerText: 'Lorem, ipsum dolor.',
     }
   ];
 </script>
@@ -27,7 +33,7 @@
       <div class="Skills--cards-container">
         <div class="o-grid-row">
         <!-- For Skills -->
-        <div v-for="(skill, index) in skills" :key="index" class="col size-xs-12 size-sm-6 size-4">
+        <div v-for="(skill, index) in skills" :key="index" class="col size-xs-12 size-sm-6 size-3">
           <div class="Skills--card">
             <div class="Skills--card-body">
               <img :src="skill.image" :alt="`Skill ${index + 1}`">

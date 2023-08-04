@@ -12,9 +12,9 @@
   <main >
     <HeroBanner />
     <Statistics />
-    <MyServices />
     <RecentProjects />
     <Skills />
+    <MyServices />
   </main>
 </template>
 

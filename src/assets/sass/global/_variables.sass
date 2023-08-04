@@ -14,7 +14,7 @@ $tablet: 768px
 $phablet: 740px
 $mobile: 568px
 $mobile-landscape: 480px
-$mobile-portrait: 380px
+$mobile-portrait: 420px
 
 // Colores
 $darkcustom: #1b1b1b
@@ -28,6 +28,10 @@ $yellowbase: #f7ba2b
 // min desktopBig
 @mixin minDesktopSize
 	@media ( min-width: $desktop)
+		@content
+// min 1280
+@mixin minDesktop1280
+	@media ( min-width: $desktop-1280)
 		@content
 
 // min 1140
@@ -61,6 +65,10 @@ $yellowbase: #f7ba2b
 // min 1024
 @mixin minTabletLandscape
 	@media (min-width: $tablet-landscape )
+		@content
+// 960 - 1024
+@mixin tabletPortraitToTabletLandscape
+	@media ( min-width: $tablet-portrait ) and ( max-width: $tablet-landscape )
 		@content
 // 960 - 1140
 @mixin tabletPortraitToDesktopSmall
@@ -118,11 +126,11 @@ $yellowbase: #f7ba2b
 @mixin maxMobileLandscape
 	@media (max-width: $mobile-landscape)
 		@content
-// min 380 max 568
+// min 420 max 568
 @mixin mobilePortraitToMobile
 	@media (min-width: $mobile-portrait) and (max-width: $mobile)
 		@content
-// max 380
+// max 420
 @mixin maxMobilePortrait
 	@media (max-width: $mobile-portrait)
 		@content
