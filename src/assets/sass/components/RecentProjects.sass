@@ -87,3 +87,31 @@
         @include maxTabletPortrait
           right: 0
 
+
+
+  // Flicking
+  .flicking-viewport
+    display: flex
+    flex-flow: column-reverse
+  // Arrow
+  .arrows-container
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    width: 100%
+    max-width: 1024px
+    margin: 0 auto 20px
+    @include maxTabletLandscape
+      padding: 0 15px
+    .arrowfli
+      position: relative
+      transform: unset
+      border-radius: 0
+      background-color: $purplelight
+      left: 0
+      right: 0
+      @include minTabletLandscape
+        transform: scale(.75)
+      &.flicking-arrow-disabled
+        background-color: transparent
+        opacity: .5

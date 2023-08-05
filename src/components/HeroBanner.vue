@@ -1,10 +1,10 @@
 <script setup>
 import Statistics from "./Statistics.vue";
-import BannerHeroDots from "./svg/BannerHero-dots.vue";
+import BannerHeroDots from "./svg/herobanner-dots.vue";
 </script>
 <script>
 import Flicking from "@egjs/vue3-flicking";
-import { Pagination } from "@egjs/flicking-plugins";
+import { Pagination, AutoPlay } from "@egjs/flicking-plugins";
 export default {
   components: {
     Flicking
@@ -23,13 +23,14 @@ export default {
         useFractionalSize: false,
         interruptable: false,
         moveType: "strict",
-        circular: false,
+        circular: true,
       },
     }
   },
   mounted() {
     // Add Pagination plugin to the plugins array
     this.plugins.push(
+      new AutoPlay({ duration: 3000, direction: "NEXT", stopOnHover: false }),
       new Pagination({ type: "scroll", renderBullet: this.renderBullet })
     );
   },
