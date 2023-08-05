@@ -1,24 +1,27 @@
 <script setup >
-  const skills = [
-    {
-      image: '../src/assets/images/skill-img.jpg',
-      titulo: 'Desarrollo web',
-      description: 'Diseño y codificación web para experiencias digitales impactantes.',
-      footerImage: 'https://placehold.co/40x40'
-    },
-    {
-      image: '../src/assets/images/skill1.png',
-      titulo: 'Lorem, ipsum dolor.',
-      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate optio',
-      footerImage: 'https://placehold.co/40x40'
-    },
-    {
-      image: '../src/assets/images/skill1.png',
-      titulo: 'Lorem, ipsum dolor.',
-      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate optio',
-      footerImage: 'https://placehold.co/40x40'
-    }
-  ];
+import ArrowRight from './svg/ArrowRight.vue';
+
+const skills = [
+  {
+    image: '../src/assets/images/skill-img.jpg',
+    titulo: 'Desarrollo web',
+    description: 'Diseño y codificación web para experiencias digitales impactantes. ',
+    linkTo: 'about',
+    footerImage: 'https://placehold.co/40x40'
+  },
+  {
+    image: '../src/assets/images/skill1.png',
+    titulo: 'Lorem, ipsum dolor.',
+    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate optio',
+    footerImage: 'https://placehold.co/40x40'
+  },
+  {
+    image: '../src/assets/images/skill1.png',
+    titulo: 'Lorem, ipsum dolor.',
+    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate optio ',
+    footerImage: 'https://placehold.co/40x40'
+  }
+];
 </script>
 <template>
   <section class="Skills">
@@ -26,24 +29,29 @@
       <h2 class="text-center">Mi conocimiento y habilidades</h2>
       <div class="Skills--cards-container">
         <div class="o-grid-row">
-        <!-- For Skills -->
-        <div v-for="(skill, index) in skills" :key="index" class="col size-xs-12 size-sm-6 size-4">
-          <div class="Skills--card">
-            <div class="Skills--card-sideText">
+          <!-- For Skills -->
+          <div v-for="(skill, index) in skills" :key="index" class="col size-xs-12 size-sm-6 size-4">
+            <div class="Skills--card">
+              <div class="Skills--card-sideText delay-2">
                 <h3>{{ skill.titulo }}</h3>
                 <span>Ver más</span>
+              </div>
+              <div class="Skills--card-body">
+                <img :src="skill.image" :alt="`Skill ${index + 1}`">
+              </div>
+              <div class="Skills--card-desc">
+                <p>
+                  {{ skill.description }}
+                </p>
+                <router-link v-if="skill.linkTo" :to="skill.linkTo" class="link">
+                  Continuar leyendo
+                  <ArrowRight />
+                </router-link>
+              </div>
             </div>
-            <div class="Skills--card-body">
-              <img :src="skill.image" :alt="`Skill ${index + 1}`">
-            </div>
-            <!-- <div class="Skills--card-footer">
-              <img :src="skill.footerImage" alt="Footer">
-              <h3>{{ skill.footerText }}</h3>          
-            </div> -->
           </div>
+          <!-- End for skills -->
         </div>
-        <!-- End for skills -->
-      </div>
       </div>
       <router-link to="/about" class="o-btn md-btn btn-outline"><span>></span> Ver todas las habilidades</router-link>
     </div>
