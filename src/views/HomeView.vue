@@ -12,9 +12,8 @@
   <main >
     <HeroBanner />
     <Skills />
-    <!-- <Statistics /> -->
-    <RecentProjects />
     <MyServices />
+    <RecentProjects />
   </main>
 </template>
 

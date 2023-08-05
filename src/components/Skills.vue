@@ -1,24 +1,28 @@
 <script setup >
-import ArrowRight from './svg/ArrowRight.vue';
+// import ArrowRight from './svg/ArrowRight.vue';
+
+import ArrowRight from './svg/arrowright.vue'
 
 const skills = [
   {
     image: '../src/assets/images/skill-img.jpg',
-    titulo: 'Desarrollo web',
-    description: 'Diseño y codificación web para experiencias digitales impactantes. ',
+    titulo: 'Desarrollo web en Marketing digital',
+    description: 'Diseño y codificación web para experiencias digitales de impacto. ',
     linkTo: 'about',
     footerImage: 'https://placehold.co/40x40'
   },
   {
-    image: '../src/assets/images/skill1.png',
-    titulo: 'Lorem, ipsum dolor.',
-    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate optio',
+    image: '../src/assets/images/skill-img.jpg',
+    titulo: 'Desarrollo web en Ecommerce',
+    description: 'Diseño y codificación web para experiencias digitales de impacto. ',
+    linkTo: 'about',
     footerImage: 'https://placehold.co/40x40'
   },
   {
-    image: '../src/assets/images/skill1.png',
-    titulo: 'Lorem, ipsum dolor.',
-    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate optio ',
+    image: '../src/assets/images/skill-img.jpg',
+    titulo: 'Desarrollo web para Email Marketing',
+    description: 'Diseño y codificación web para experiencias digitales de impacto. ',
+    linkTo: 'about',
     footerImage: 'https://placehold.co/40x40'
   }
 ];
@@ -26,9 +30,9 @@ const skills = [
 <template>
   <section class="Skills">
     <div class="o-container">
-      <h2 class="text-center">Mi conocimiento y habilidades</h2>
+      <h2 class="text-center">Brindo soluciones en</h2>
       <div class="Skills--cards-container">
-        <div class="o-grid-row">
+        <div class="o-grid-row row-center">
           <!-- For Skills -->
           <div v-for="(skill, index) in skills" :key="index" class="col size-xs-12 size-sm-6 size-4">
             <div class="Skills--card">
@@ -53,7 +57,7 @@ const skills = [
           <!-- End for skills -->
         </div>
       </div>
-      <router-link to="/about" class="o-btn md-btn btn-outline"><span>></span> Ver todas las habilidades</router-link>
+      <!-- <router-link to="/about" class="o-btn md-btn btn-outline"><span>></span> Ver todas las habilidades</router-link> -->
     </div>
   </section>
 </template>
