@@ -19,7 +19,7 @@
   &--cards-container
     margin: 80px auto 0
     position: relative
-    z-index: 1
+    
     @include maxMobile
       margin: 60px 0 30px
 
@@ -28,12 +28,11 @@
     margin: 0 auto
     overflow: hidden
     box-shadow: rgb(161 161 161 / 20%) 0px 30px 20px -3px
-    // cursor: pointer
-    // border-radius: 6px
+    border-radius: 6px
     position: relative
     border: 2px solid #fff
-    height: 250px
-
+    // height: 250px
+    display: block
     &.theme-yellow
       .Skills--card-sideText::before
         background-color: $yellowbase
@@ -43,11 +42,13 @@
       .Skills--card-desc .link svg
         fill: $yellowbase
         stroke: $yellowbase
-    &:hover
-      .Skills--card-desc
-        transform: translateX(0vmin)
-      .Skills--card-sideText
-        transform: translateX(-60vmin)
+    // &:active,
+    // &:hover,
+    // &:focus
+    //   .Skills--card-desc
+    //     transform: translateX(0vmin)
+    //   .Skills--card-sideText
+    //     transform: translateX(-60vmin)
     img
       width: 100%
 
@@ -63,7 +64,7 @@
 
 
   &--card-body
-    position: absolute
+    position: relative
     top: 0
     left: 0
     width: 100%
@@ -72,35 +73,7 @@
       width: 100%
       min-height: 100%
     
-  &--card-desc
-    position: absolute
-    left: 0
-    top: 0
-    width: 60%
-    height: 100%
-    background-color: $darkcustom
-    padding: 15px 20px
-    z-index: 3
-    transition: .3s ease-in-out
-    transform: translateX(-60vmin)    
-    display: flex
-    flex-wrap: wrap
-    p
-      font-weight: 600
-      line-height: 1.5
-      text-align: right
-      width: 100%
-      color: white
-    .link
-      display: block
-      margin-top: auto
-      font-size: .8rem
-      text-align: right
-      width: 100%
-      color: white
-      svg
-        fill: $greenlight
-        stroke: $greenlight
+
   &--card-sideText
     position: relative
     left: 0
@@ -109,11 +82,14 @@
     height: 100%
     background-color: $darkcustom
     padding: 15px 20px
-    z-index: 3
     display: flex
     flex-wrap: wrap
     transition: .2s ease-in-out
+    z-index: 5
+    &:hover
+      display: none
     &::before
+      display: none
       content: ''
       position: absolute
       top: 15px
@@ -129,8 +105,9 @@
       line-height: 1.35
       width: 100%
       color: white
+      display: none
     span
-      display: flex
+      display: none
       align-items: center
       justify-content: center
       margin-top: auto
@@ -152,5 +129,35 @@
         border-radius: 50%
         border: 2px solid $greenlight
         margin: 0 5px 0 0
+
+  &--card-desc
+    position: absolute
+    left: 0
+    top: 0
+    width: 60%
+    height: 100%
+    background-color: $darkcustom
+    padding: 15px 20px
+    transition: .3s ease-in-out
+    transform: translateX(-60vmin)    
+    display: flex
+    flex-wrap: wrap
+    p
+      font-weight: 600
+      line-height: 1.5
+      text-align: right
+      width: 100%
+      color: white
+    .link
+      display: block
+      margin-top: auto
+      font-size: .8rem
+      text-align: right
+      width: 100%
+      color: white
+      svg
+        fill: $greenlight
+        stroke: $greenlight
+
 
 

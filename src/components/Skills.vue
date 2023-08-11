@@ -36,13 +36,11 @@ const skills = [
           <!-- For Skills -->
           <div v-for="(skill, index) in skills" :key="index" class="col size-xs-12 size-sm-6 size-4">
             <div class="Skills--card">
-              <div class="Skills--card-sideText delay-2">
-                <h3>{{ skill.titulo }}</h3>
-                <span>Ver más</span>
-              </div>
               <div class="Skills--card-body">
                 <img :src="skill.image" :alt="`Skill ${index + 1}`">
               </div>
+
+
               <div class="Skills--card-desc">
                 <p>
                   {{ skill.description }}
@@ -52,6 +50,12 @@ const skills = [
                   <ArrowRight />
                 </router-link>
               </div>
+
+              <div class="Skills--card-sideText ">
+                <h3>{{ skill.titulo }}</h3>
+                <span>Ver más</span>
+              </div>
+
             </div>
           </div>
           <!-- End for skills -->
