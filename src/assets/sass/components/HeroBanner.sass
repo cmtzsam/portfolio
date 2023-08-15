@@ -21,6 +21,9 @@
     @include maxTabletLandscape
       bottom: 0
 
+  // .my-element
+  //   opacity: 0
+
   h1
     line-height: .9
     z-index: 3
@@ -31,15 +34,18 @@
     position: relative
     top: 25px
     left: 30px
-    span
+    span.toleft
       display: block
-      margin-left: 70px
-      @include mobileToPortrait
-        display: inline
-        margin-left: 0
-      @include maxMobile
-        display: inline
-        margin-left: 0
+      position: relative
+    span.toright
+      display: block
+      // margin-left: 70px
+      // @include mobileToPortrait
+      //   display: inline
+      //   margin-left: 0
+      // @include maxMobile
+      //   display: inline
+      //   margin-left: 0
     // 960 - 1024
     @include tabletPortraitToTabletLandscape
       font-size: 5.5rem
@@ -57,14 +63,14 @@
     @include mobilePortraitToMobile
       top: 0
       left: 0
-      font-size: 3.25rem
+      font-size: 2.25rem
       max-width: 480px
       margin: 0 auto -15px
       padding: 30px 0 0
       font-size: 4rem
     @include maxMobilePortrait
       max-width: 100%
-      font-size: 2.75rem
+      font-size: 2.25rem
       margin: 0 auto -9px
       padding: 0
       top: 0

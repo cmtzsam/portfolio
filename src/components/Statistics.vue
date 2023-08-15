@@ -2,9 +2,10 @@
   <section class="Statistics" id="Statistics">
     <div class="o-grid-row" ref="infoDiv">
       <div class="col size-xs-4 size-4">
+        <!-- Pasar un array -->
         <div class="Statistics--info">
           <h2 v-if="showCounter">
-            <vue3-autocounter ref='counter' :startAmount='0' :endAmount='22' :duration='2' prefix='+' suffix=''
+            <vue3-autocounter ref='counter' :startAmount='0' :endAmount='22' :duration='3' prefix='+' suffix=''
               separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
           </h2>
           <p>Lorem, ipsum dolor.</p>
@@ -13,7 +14,7 @@
       <div class="col size-xs-4 size-4">
         <div class="Statistics--info">
           <h2 v-if="showCounter">
-            <vue3-autocounter ref='counter' :startAmount='0' :endAmount='100' :duration='2' prefix='+' suffix=''
+            <vue3-autocounter ref='counter' :startAmount='0' :endAmount='100' :duration='3' prefix='+' suffix=''
               separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
           </h2>
           <p>Lorem, ipsum dolor.</p>
@@ -22,7 +23,7 @@
       <div class="col size-xs-4 size-4">
         <div class="Statistics--info">
           <h2 v-if="showCounter">
-            <vue3-autocounter ref='counter' :startAmount='0' :endAmount='7' :duration='2' prefix='+' suffix=''
+            <vue3-autocounter ref='counter' :startAmount='0' :endAmount='7' :duration='3' prefix='+' suffix=''
               separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
           </h2>
           <p>Lorem, ipsum dolor.</p>
@@ -47,7 +48,7 @@ export default {
   mounted() {
     const observer = new IntersectionObserver(this.handleObserver, {
       root: null, // El valor predeterminado es el viewport
-      threshold: 0.5, // El porcentaje del elemento visible necesario para disparar la animación (0.5 significa que al menos la mitad del elemento debe ser visible)
+      threshold: 1, // El porcentaje del elemento visible necesario para disparar la animación (0.5 significa que al menos la mitad del elemento debe ser visible)
     });
 
     // Observa el elemento con la directiva ref "infoDiv"

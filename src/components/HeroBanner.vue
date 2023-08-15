@@ -1,13 +1,22 @@
 <script setup>
 import Statistics from "./Statistics.vue";
 import BannerHeroDots from "./svg/herobanner-dots.vue";
+import LoadScreen from "./LoadScreen.vue"
 </script>
+
 <script>
 import Flicking from "@egjs/vue3-flicking";
 import { Pagination, AutoPlay } from "@egjs/flicking-plugins";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   components: {
-    Flicking
+    Flicking,
+    gsap,
+    ScrollTrigger,
+    LoadScreen
   },
 
   data() {
@@ -17,7 +26,7 @@ export default {
         panelsPerView: 1,
         align: "center",
         bounce: "0",
-        bound: true,
+        bound: false,
         renderOnlyVisible: false,
         duration: 1000,
         useFractionalSize: false,
@@ -25,6 +34,7 @@ export default {
         moveType: "strict",
         circular: true,
       },
+      isLoading: true
     }
   },
   mounted() {
@@ -33,6 +43,54 @@ export default {
       new AutoPlay({ duration: 3000, direction: "NEXT", stopOnHover: false }),
       new Pagination({ type: "scroll", renderBullet: this.renderBullet })
     );
+
+    // animations
+    let mm = gsap.matchMedia();
+    // For dekstop
+    mm.add("(min-width: 600px)", () => {
+      gsap.to(".my-element .toright", {
+        x: 200,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".my-element .toright",
+          scrub: true
+        },
+      });
+      gsap.to(".my-element .toleft", {
+        x: -100,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".my-element .toleft",
+          scrub: true
+        },
+      });
+    });
+
+    // For mobile
+    mm.add("(max-width: 600px)", () => {
+      gsap.to(".my-element .toright", {
+        x: 40,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".my-element .toright",
+          scrub: true
+        },
+      });
+      gsap.to(".my-element .toleft", {
+        x: -40,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".my-element .toleft",
+          scrub: true
+        },
+      });
+    });
+
+    // Remove Loading Screen
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1000);    
+
   },
   methods: {
     // Custom rendering function for the pagination bullets
@@ -42,11 +100,16 @@ export default {
   },
 }
 </script>
+
 <template>
+  <LoadScreen v-if="isLoading" />
   <section class="HeroBanner" id="HeroBanner">
 
     <div class="o-container">
-      <h1>Carlos A.<span>M. Samaniego</span> </h1>
+      <h1 class="my-element">
+        <span class="toleft">Carlos A. M.</span>
+        <span class="toright">Samaniego</span>
+      </h1>
     </div>
 
     <div class="HeroBanner--intro">
@@ -98,7 +161,6 @@ export default {
 
   </section>
 </template>
-
 
 <style lang="sass">
 @import "@/assets/sass/components/HeroBanner.sass"
