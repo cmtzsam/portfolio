@@ -12,7 +12,7 @@
   <main >
     <HeroBanner />
     <Skills />
-    <MyServices />
+    <!-- <MyServices /> -->
     <RecentProjects />
   </main>
 </template>

@@ -27,6 +27,35 @@ const skills = [
   }
 ];
 </script>
+<script>
+export default {
+  methods: {
+    cardActive(card) {
+      const currentCard = card.currentTarget;
+      // Remove the class `card-active` from all of the other cards.
+      const otherCards = document.querySelectorAll('.Skills--card');
+      for (const otherCard of otherCards) {
+        otherCard.classList.remove('card-active');
+      }
+      // Check if the class `card-active` is already applied to the current card.
+      if (!currentCard.classList.contains('card-active')) {
+        // Add the class `card-active` to the current card.
+        currentCard.classList.add('card-active');
+      }
+    },
+
+    cardInactive(card){
+      const currentCard = card.currentTarget;
+      // Remove the class `card-active` from all of the other cards.
+      const otherCards = document.querySelectorAll('.Skills--card');
+      for (const otherCard of otherCards) {
+        otherCard.classList.remove('card-active');
+      }      
+    }
+
+  }
+};
+</script>
 <template>
   <section class="Skills">
     <div class="o-container">
@@ -35,28 +64,44 @@ const skills = [
         <div class="o-grid-row row-center">
           <!-- For Skills -->
           <div v-for="(skill, index) in skills" :key="index" class="col size-xs-12 size-sm-6 size-4">
-            <div class="Skills--card">
-              <div class="Skills--card-body">
-                <img :src="skill.image" :alt="`Skill ${index + 1}`">
-              </div>
 
+            <div 
+              class="Skills--card" 
+              @touchstart="cardActive"
+              @mouseenter="cardActive"
+              @mouseleave="cardInactive"
+            >
+
+              <img :src="skill.image" :alt="`Skill ${index + 1}`">
 
               <div class="Skills--card-desc">
-                <p>
+                <div class="Skills--card-title">
+                  {{ skill.titulo }}
+                </div>
+                <div class="Skills--card-more">
+                  Ver más
+                </div>
+              </div>
+              <div class="Skills--card-body">
+                <span>
                   {{ skill.description }}
-                </p>
+                </span>
                 <router-link v-if="skill.linkTo" :to="skill.linkTo" class="link">
                   Continuar leyendo
                   <ArrowRight />
                 </router-link>
               </div>
 
+              <!-- <div class="Skills--card-body">
+              </div>
+
               <div class="Skills--card-sideText ">
                 <h3>{{ skill.titulo }}</h3>
                 <span>Ver más</span>
-              </div>
+              </div> -->
 
             </div>
+
           </div>
           <!-- End for skills -->
         </div>

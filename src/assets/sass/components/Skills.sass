@@ -23,7 +23,7 @@
     @include maxMobile
       margin: 60px 0 30px
 
-  &--card
+  .Skills--card
     width: 90%
     margin: 0 auto
     overflow: hidden
@@ -31,7 +31,7 @@
     border-radius: 6px
     position: relative
     border: 2px solid #fff
-    // height: 250px
+    height: 250px
     display: block
     &.theme-yellow
       .Skills--card-sideText::before
@@ -42,15 +42,16 @@
       .Skills--card-desc .link svg
         fill: $yellowbase
         stroke: $yellowbase
-    // &:active,
-    // &:hover,
-    // &:focus
-    //   .Skills--card-desc
-    //     transform: translateX(0vmin)
-    //   .Skills--card-sideText
-    //     transform: translateX(-60vmin)
+
+    &.card-active
+      .Skills--card-desc
+        transform: translateX(-60vmin)
+      .Skills--card-body
+        transform: translateX(0vmin)
     img
       width: 100%
+      height: 100%
+      position: relative
 
     @include maxPhablet
       margin: 0 auto 30px
@@ -60,22 +61,10 @@
       box-shadow: none
       border: 1px solid #ccc
       border-radius: 6px
-
-
-
-  &--card-body
-    position: relative
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    img
-      width: 100%
-      min-height: 100%
     
 
-  &--card-sideText
-    position: relative
+  .Skills--card-desc
+    position: absolute
     left: 0
     top: 0
     width: 40%
@@ -86,10 +75,10 @@
     flex-wrap: wrap
     transition: .2s ease-in-out
     z-index: 5
-    &:hover
-      display: none
+    transform: translateX(0)
+    // display: none
     &::before
-      display: none
+      // display: none
       content: ''
       position: absolute
       top: 15px
@@ -99,38 +88,41 @@
       width: 2px
       background-color: $greenlight
       border-radius: 50px
-    h3
+    .Skills--card-title
       font-size: 1.15rem
       font-weight: 700
       line-height: 1.35
       width: 100%
       color: white
-      display: none
-    span
-      display: none
-      align-items: center
-      justify-content: center
+      font-family: $fonttitulos
+    .Skills--card-more
+      @include flexCenter
+      line-height: 1
       margin-top: auto
-      font-size: .55rem
+      font-size: .65rem
       width: 100%
-      max-width: 90px
+      max-width: 100px
       text-align: center
       font-weight: 600
-      padding: 4px 
+      position: relative
       border-radius: 30px
       border: 2px solid $greenlight
       text-transform: uppercase
       color: white
+      font-family: $fontprincipal
+      padding: 0 0 0 7px
+      height: 20px
       &::before
+        display: block
         content: ''
         position: relative
         width: 10px
         height: 10px
         border-radius: 50%
         border: 2px solid $greenlight
-        margin: 0 5px 0 0
+        margin: 0 5px 0 -5px
 
-  &--card-desc
+  .Skills--card-body
     position: absolute
     left: 0
     top: 0
@@ -142,7 +134,7 @@
     transform: translateX(-60vmin)    
     display: flex
     flex-wrap: wrap
-    p
+    span
       font-weight: 600
       line-height: 1.5
       text-align: right
