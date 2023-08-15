@@ -8,7 +8,6 @@
   import RecentProjects from '../components/RecentProjects.vue'
 </script>
 <template >
-
   <main >
     <HeroBanner />
     <Skills />
