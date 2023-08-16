@@ -1,5 +1,4 @@
 <script setup>
-import Statistics from "./Statistics.vue";
 import BannerHeroDots from "./svg/herobanner-dots.vue";
 import LoadScreen from "./LoadScreen.vue"
 </script>
@@ -48,12 +47,22 @@ export default {
     let mm = gsap.matchMedia();
     // For dekstop
     mm.add("(min-width: 600px)", () => {
+      // gsap.set('.HeroBanner--text', { y: 100 });
+      gsap.to(".HeroBanner--text", {
+        y: -50,
+        ease: "none",
+        scrollTrigger: {
+          start: "top 0",
+          trigger: "#HeroBanner",
+          scrub: 1,
+        },
+      });
       gsap.to(".my-element .toright", {
         x: 200,
         ease: "none",
         scrollTrigger: {
           trigger: ".my-element .toright",
-          scrub: true
+          scrub: 1,
         },
       });
       gsap.to(".my-element .toleft", {
@@ -61,7 +70,7 @@ export default {
         ease: "none",
         scrollTrigger: {
           trigger: ".my-element .toleft",
-          scrub: true
+          scrub: 1
         },
       });
     });
@@ -104,7 +113,6 @@ export default {
 <template>
   <LoadScreen v-if="isLoading" />
   <section class="HeroBanner" id="HeroBanner">
-
     <div class="o-container">
       <h1 class="my-element">
         <span class="toleft">Carlos A. M.</span>
@@ -123,9 +131,8 @@ export default {
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis perferendis non, ullam molestias
                 obcaecati deleniti quos sapiente laudantium! Hic ut quas aperiam enim, consequuntur laborum odit pariatur
                 minus maiores!
-                <br>
-                <!-- <router-link to="/about"> > <span>Curriculum Vitae</span> </router-link> -->
               </p>
+              <router-link to="/about"> > <span>Curriculum Vitae</span> </router-link>
             </div>
 
           </div>
@@ -154,12 +161,16 @@ export default {
 
         </div>
 
-        <Statistics />
+        <!-- <Statistics /> -->
 
       </div>
     </div>
-
   </section>
+  <!-- <section class="Hero--decoration">
+    <div class="o-container">
+      <img src="../assets/images/gotas.png" alt="Decoration" srcset="../assets/images/gotas.png" >
+    </div>
+  </section> -->
 </template>
 
 <style lang="sass">

@@ -28,7 +28,31 @@ const skills = [
 ];
 </script>
 <script>
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
+
 export default {
+  components: {
+    gsap,
+    ScrollTrigger,
+  },
+  mounted() {
+    // animations
+    let mm = gsap.matchMedia();
+    // For dekstop
+    mm.add("(min-width: 600px)", () => {
+      gsap.to(".Skills--card", {
+        yPercent: -30,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".Skills--card",
+          scrub: true,
+        },
+      });
+    });
+  },
   methods: {
     cardActive(card) {
       const currentCard = card.currentTarget;

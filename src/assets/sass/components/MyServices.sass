@@ -2,20 +2,26 @@
 
 .MyServices
   
-  padding: 100px 0 50px
+  padding: 50px 0
   position: relative
   background-color: white
 
-  &::before
-    content: ''
-    position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    height: 15%
+  &.theme-dark
     background-color: $darkcustom
-    @include maxTabletPortrait
-      display: none
+    .MyServices--info
+      h2, p
+        color: white
+
+  // &::before
+  //   content: ''
+  //   position: absolute
+  //   bottom: 0
+  //   left: 0
+  //   width: 100%
+  //   height: 15%
+  //   background-color: $darkcustom
+  //   @include maxTabletPortrait
+  //     display: none
 
   &--grid
     position: relative
@@ -63,7 +69,7 @@
           height: 9px
           border-radius: 50%
           // background-color: $purplelight
-          border: 2px solid $yellowbase
+          border: 2px solid $greenlight
           margin: 0 10px 0 0
           @include flexCenter
           color: white
