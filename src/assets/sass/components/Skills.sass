@@ -11,6 +11,16 @@
     width: 100%
     height: 50%
     background-color: $darkcustom
+
+
+  &.theme-dark
+    background-color: $darkcustom
+    padding-bottom: 0
+    h2
+      color: white
+
+
+  
   h2
     color: $darkcustom
 
@@ -20,6 +30,7 @@
   &--cards-container
     margin: 80px auto 0
     position: relative
+    
     
     @include maxMobile
       margin: 60px 0 30px
@@ -34,6 +45,7 @@
     border: 2px solid #fff
     height: 250px
     display: block
+    z-index: 5
     &.theme-yellow
       .Skills--card-sideText::before
         background-color: $yellowbase

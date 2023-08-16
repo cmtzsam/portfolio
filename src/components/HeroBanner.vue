@@ -49,7 +49,7 @@ export default {
     mm.add("(min-width: 600px)", () => {
       // gsap.set('.HeroBanner--text', { y: 100 });
       gsap.to(".HeroBanner--text", {
-        y: -50,
+        y: 60,
         ease: "none",
         scrollTrigger: {
           start: "top 0",

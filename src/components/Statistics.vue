@@ -1,32 +1,37 @@
 <template>
-  <section class="Statistics" id="Statistics">
-    <div class="o-grid-row" ref="infoDiv">
-      <div class="col size-xs-4 size-4">
-        <!-- Pasar un array -->
-        <div class="Statistics--info">
-          <h2 v-if="showCounter">
-            <vue3-autocounter ref='counter' :startAmount='0' :endAmount='22' :duration='3' prefix='+' suffix=''
-              separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
-          </h2>
-          <p>Lorem, ipsum dolor.</p>
+  <section class="Statistics theme-dark" id="Statistics">
+    <div class="o-container">
+
+      <h2>Lorem ipsum dolor</h2>
+
+      <div class="o-grid-row" ref="infoDiv">
+        <div class="col size-xs-4 size-4">
+          <!-- Pasar un array -->
+          <div class="Statistics--info">
+            <h3 v-if="showCounter">
+              <vue3-autocounter ref='counter' :startAmount='0' :endAmount='22' :duration='2' prefix='+' suffix=''
+                separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
+            </h3>
+            <p>Lorem, ipsum dolor.</p>
+          </div>
         </div>
-      </div>
-      <div class="col size-xs-4 size-4">
-        <div class="Statistics--info">
-          <h2 v-if="showCounter">
-            <vue3-autocounter ref='counter' :startAmount='0' :endAmount='100' :duration='3' prefix='+' suffix=''
-              separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
-          </h2>
-          <p>Lorem, ipsum dolor.</p>
+        <div class="col size-xs-4 size-4">
+          <div class="Statistics--info">
+            <h3 v-if="showCounter">
+              <vue3-autocounter ref='counter' :startAmount='0' :endAmount='100' :duration='2' prefix='+' suffix=''
+                separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
+            </h3>
+            <p>Lorem, ipsum dolor.</p>
+          </div>
         </div>
-      </div>
-      <div class="col size-xs-4 size-4">
-        <div class="Statistics--info">
-          <h2 v-if="showCounter">
-            <vue3-autocounter ref='counter' :startAmount='0' :endAmount='7' :duration='3' prefix='+' suffix=''
-              separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
-          </h2>
-          <p>Lorem, ipsum dolor.</p>
+        <div class="col size-xs-4 size-4">
+          <div class="Statistics--info">
+            <h3 v-if="showCounter">
+              <vue3-autocounter ref='counter' :startAmount='0' :endAmount='7' :duration='2' prefix='+' suffix=''
+                separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
+            </h3>
+            <p>Lorem, ipsum dolor.</p>
+          </div>
         </div>
       </div>
     </div>

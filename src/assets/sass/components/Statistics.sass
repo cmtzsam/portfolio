@@ -6,6 +6,8 @@
   left: 0
   width: 100%
   z-index: 6
+  position: relative
+  z-index: 1  
   @include maxPhablet
     padding: 50px 0
   @include maxMobile
@@ -13,6 +15,25 @@
     margin-bottom: 40px
   @include maxMobilePortrait
     margin-bottom: 0px
+
+
+  &.theme-dark
+    background-color: $darkcustom
+    padding: 0 0 30px
+    margin-top: -100px
+    .o-container
+      background-color: white
+      padding: 100px 0 70px
+      border-radius: 15px
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0
+
+    .Statistics--info
+      h3
+        color: $greenlight
+      p
+        color: $darkcustom
+
   .o-grid-row
     .col
       &:nth-child(2)
@@ -35,16 +56,20 @@
             margin-bottom: 0
             padding-bottom: 0
 
+  h2
+    text-align: center
+    margin: 0 0 70px
+
   &--info
     @include maxMobile
       max-width: 300px
       margin-left: auto
       margin-right: auto
 
-    h2, p
+    h3, p
       text-align: center
-      color: white
-    h2
+      color: $darkcustom
+    h3
       font-size: 3.3rem
       color: $greenlight
       @include maxMobile
@@ -81,7 +106,7 @@
     @include maxMobileLandscape
       padding: 10px 0 50px
     &--info 
-      h2
+      h3
         @include tabletLandscapeDesktop1280
           font-size: 2.75rem
         @include tabletPortraitToTabletLandscape

@@ -1,39 +1,39 @@
 <script setup >
-// import ArrowRight from './svg/ArrowRight.vue';
-
 import ArrowRight from './svg/arrowright.vue'
-
-const skills = [
-  {
-    image: '../src/assets/images/skill-img.jpg',
-    titulo: 'Desarrollo web en Marketing digital',
-    description: 'Diseño y codificación web para experiencias digitales de impacto. ',
-    linkTo: 'about',
-    footerImage: 'https://placehold.co/40x40'
-  },
-  {
-    image: '../src/assets/images/skill-img.jpg',
-    titulo: 'Desarrollo web en Ecommerce',
-    description: 'Diseño y codificación web para experiencias digitales de impacto. ',
-    linkTo: 'about',
-    footerImage: 'https://placehold.co/40x40'
-  },
-  {
-    image: '../src/assets/images/skill-img.jpg',
-    titulo: 'Desarrollo web para Email Marketing',
-    description: 'Diseño y codificación web para experiencias digitales de impacto. ',
-    linkTo: 'about',
-    footerImage: 'https://placehold.co/40x40'
-  }
-];
 </script>
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-
 export default {
+  data() {
+    return {
+      skills: [
+        {
+          image: "../src/assets/images/skill-img.jpg",
+          titulo: 'Desarrollo web en Marketing digital',
+          description: 'Diseño y codificación web para experiencias digitales de impacto. ',
+          linkTo: 'about',
+          footerImage: 'https://placehold.co/40x40'
+        },
+        {
+          image: '../src/assets/images/skill-img.jpg',
+          titulo: 'Desarrollo web en Ecommerce',
+          description: 'Diseño y codificación web para experiencias digitales de impacto. ',
+          linkTo: 'about',
+          footerImage: 'https://placehold.co/40x40'
+        },
+        {
+          image: '../src/assets/images/skill-img.jpg',
+          titulo: 'Desarrollo web para Email Marketing',
+          description: 'Diseño y codificación web para experiencias digitales de impacto. ',
+          linkTo: 'about',
+          footerImage: 'https://placehold.co/40x40'
+        }
+      ]
+    }
+  },
   components: {
     gsap,
     ScrollTrigger,
@@ -68,20 +68,20 @@ export default {
       }
     },
 
-    cardInactive(card){
-      const currentCard = card.currentTarget;
+    cardInactive(card) {
+      // const currentCard = card.currentTarget;
       // Remove the class `card-active` from all of the other cards.
       const otherCards = document.querySelectorAll('.Skills--card');
       for (const otherCard of otherCards) {
         otherCard.classList.remove('card-active');
-      }      
-    }
+      }
+    }    
 
   }
 };
 </script>
 <template>
-  <section class="Skills">
+  <section class="Skills theme-dark">
     <div class="o-container">
       <h2 class="text-center">Brindo soluciones en</h2>
       <div class="Skills--cards-container">
@@ -89,15 +89,9 @@ export default {
           <!-- For Skills -->
           <div v-for="(skill, index) in skills" :key="index" class="col size-xs-12 size-sm-6 size-4">
 
-            <div 
-              class="Skills--card" 
-              @touchstart="cardActive"
-              @mouseenter="cardActive"
-              @mouseleave="cardInactive"
-            >
+            <div class="Skills--card" @touchstart="cardActive" @mouseenter="cardActive" @mouseleave="cardInactive">
 
-              <img :src="skill.image" :alt="`Skill ${index + 1}`">
-
+              <img :src="skill.image" :alt="skill.titulo" />
               <div class="Skills--card-desc">
                 <div class="Skills--card-title">
                   {{ skill.titulo }}
