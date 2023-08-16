@@ -2,7 +2,7 @@
   <section class="Statistics theme-dark" id="Statistics">
     <div class="o-container">
 
-      <h2>Lorem ipsum dolor</h2>
+      <h2>Aliquet ultricies eget viverra arcu vitae faucibus diam consequat maecenas lorem ispum dolor sit amet nunc</h2>
 
       <div class="o-grid-row" ref="infoDiv">
         <div class="col size-xs-4 size-4">

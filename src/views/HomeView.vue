@@ -15,7 +15,7 @@ import RecentProjects from '../components/RecentProjects.vue'
     <MyServices />
     <Skills />
     <Statistics />
-    <!-- <RecentProjects /> -->
+    <RecentProjects />
   </main>
 </template>
 

@@ -34,7 +34,7 @@ import "@egjs/flicking-plugins/dist/arrow.css";
 
 export default {
   components: {
-    Flicking
+    Flicking,
   },
 
   data() {
@@ -54,13 +54,13 @@ export default {
     this.plugins.push(
       new Arrow(),
       new Fade()
-    );
+    ); 
   },
 }
 </script>
 <template>
-  <section class="RecentProjects" id="RecentProjects">
-    <div class="o-container-fluid">
+  <section class="RecentProjects theme-dark" id="RecentProjects">
+    <div class="o-container">
       <h2 class="text-center">Proyectos Recientes</h2>
       <div class="o-grid-row">
         <Flicking :options="options" :plugins="plugins" id="carrusel2">
