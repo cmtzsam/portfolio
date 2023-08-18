@@ -6,16 +6,18 @@ import Statistics from '../components/Statistics.vue';
 import Skills from '../components/Skills.vue'
 import MyServices from '../components/MyServices.vue'
 import RecentProjects from '../components/RecentProjects.vue'
-
+import History from '../components/History/History.vue'
 </script>
 <template >
 
   <main>
-    <HeroBanner />
-    <MyServices />
+    <!-- <HeroBanner /> -->
+    <!-- <MyServices /> -->
     <Skills />
-    <Statistics />
-    <RecentProjects />
+    <!-- <Statistics /> -->
+    <!-- <RecentProjects /> -->
+    <!-- <History />  -->
+    
   </main>
 </template>
 

@@ -26,14 +26,17 @@
 
   @include maxMobile
     padding: 60px 0
+  @include maxMobileLandscape
+    padding: 30px 0
 
   &--cards-container
     margin: 80px auto 0
     position: relative
-    
-    
     @include maxMobile
-      margin: 60px 0 30px
+      margin: 60px 0 30px    
+    @include maxMobileLandscape
+      margin: 30px auto 0
+  
 
   .Skills--card
     width: 90%
@@ -46,6 +49,14 @@
     height: 250px
     display: block
     z-index: 5
+    @include maxMobile
+      max-width: 350px
+    @include maxMobileLandscape
+      height: 200px
+    @include mobileToPortrait
+      width: 100%
+    @include tabletPortraitTo1280
+      width: 100%
     &.theme-yellow
       .Skills--card-sideText::before
         background-color: $yellowbase
@@ -66,7 +77,7 @@
       height: 100%
       position: relative
 
-    @include maxPhablet
+    @include maxTabletPortrait
       margin: 0 auto 30px
 
     @include maxMobile
@@ -89,7 +100,12 @@
     transition: .2s ease-in-out
     z-index: 5
     transform: translateX(0)
-    // display: none
+    @include mobileToPortrait
+      width: 50%
+    @include maxMobileLandscape
+      width: 50%
+    @include tabletPortraitTo1280
+      width: 50%
     &::before
       // display: none
       content: ''
@@ -108,6 +124,13 @@
       width: 100%
       color: white
       font-family: $fonttitulos
+      @include maxMobileLandscape
+        font-size: 1rem
+      @include mobileToPortrait
+        font-size: 1rem
+      @include tabletPortraitTo1280
+        font-size: 1rem
+
     .Skills--card-more
       @include flexCenter
       line-height: 1
@@ -125,6 +148,9 @@
       font-family: $fontprincipal
       padding: 0 0 0 7px
       height: 20px
+      @include maxMobileLandscape
+        font-size: .6rem
+        border-width: 1px
       &::before
         display: block
         content: ''
@@ -134,6 +160,8 @@
         border-radius: 50%
         border: 2px solid $greenlight
         margin: 0 5px 0 -5px
+        @include maxMobileLandscape
+          border-width: 1px
 
   .Skills--card-body
     position: absolute
@@ -153,6 +181,10 @@
       text-align: right
       width: 100%
       color: white
+      @include maxMobileLandscape
+        font-size: .85rem
+      @include tabletPortraitTo1280
+        font-size: .85rem
     .link
       display: block
       margin-top: auto
@@ -160,6 +192,10 @@
       text-align: right
       width: 100%
       color: white
+      @include maxMobileLandscape
+        font-size: .7rem
+      @include tabletPortraitTo1280
+        font-size: .7rem
       svg
         fill: $greenlight
         stroke: $greenlight

@@ -5,23 +5,18 @@
   padding: 50px 0
   position: relative
   background-color: white
+  @include phabletToDesktopSmall
+    padding: 30px 0
+  @include mobileToPhablet
+    padding: 30px 0
+  @include maxMobile
+    padding: 20px 0
 
   &.theme-dark
     background-color: $darkcustom
     .MyServices--info
       h2, p
         color: white
-
-  // &::before
-  //   content: ''
-  //   position: absolute
-  //   bottom: 0
-  //   left: 0
-  //   width: 100%
-  //   height: 15%
-  //   background-color: $darkcustom
-  //   @include maxTabletPortrait
-  //     display: none
 
   &--grid
     position: relative
@@ -34,19 +29,32 @@
     max-width: 600px
     margin: 0 auto
     padding: 15px
+    @include phabletToDesktopSmall
+      padding: 0 15px
+    @include mobileToPhablet
+      padding: 0 15px
+    @include maxMobile
+      padding: 0 10px
 
     h4
       color: $greenlight
       font-family: $fontprincipal
       font-weight: 600
+      @include maxMobile
+        text-align: center
     h2
       // color: $greenlight
       color: $darkcustom
       margin: 10px 0
       line-height: 1.25
+      @include maxMobile
+        text-align: center
     p
       line-height: 1.75
       color: $darkcustom
+      @include maxMobile
+        font-size: .9rem
+        text-align: center
     a
       &.link
         color: green
@@ -56,12 +64,19 @@
       display: flex
       flex-wrap: wrap
       margin: 30px 0 15px
+      @include phabletToDesktopSmall
+        margin-bottom: 0
+      @include mobileLandscapeToMobile
+        max-width: 320px
+        margin: 30px auto 15px
       @include maxMobile
         display: block
+        margin-left: 20px
       li
         width: 50%
         @include maxMobile
           width: 100%
+          @include flexCenter
         @include flexCenter
         margin-bottom: 20px
         span
@@ -81,5 +96,7 @@
           line-height: 1.1
           font-size: 1rem
           margin-right: auto
+          @include maxMobileLandscape
+            font-size: .85rem
 
 

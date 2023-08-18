@@ -71,6 +71,10 @@ $yellowbase: #f7ba2b
 @mixin minTabletLandscape
 	@media (min-width: $tablet-landscape )
 		@content
+// 960 - 1280
+@mixin tabletPortraitTo1280
+	@media ( min-width: $tablet-portrait ) and ( max-width: $desktop-1280 )
+		@content
 // 960 - 1024
 @mixin tabletPortraitToTabletLandscape
 	@media ( min-width: $tablet-portrait ) and ( max-width: $tablet-landscape )

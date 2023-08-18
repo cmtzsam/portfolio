@@ -1,0 +1,90 @@
+@import '../../assets/sass/global/_variables'
+
+.HistorySection
+
+  &.theme-dark
+    background-color: $darkcustom
+    padding: 70px 0 500px
+  
+  &--line
+    position: relative
+    margin: 0 0 75px
+    padding-bottom: 75px
+    // overflow: hidden
+    &:last-child
+      margin: 0 0
+      padding: 0 0
+    &:nth-child(even)
+      .HistorySection--intro
+        img
+          left: 30px
+    &:nth-child(odd)
+      .HistorySection--intro
+        img
+          right: 0px
+    @include flexStart
+    align-items: flex-start
+    
+
+  &--intro
+    width: 100%
+    max-width: 450px
+    border-left: 5px solid $greenlight
+    padding: 10px 0px 10px 20px
+    h2,p
+      color: white
+      position: relative
+      z-index: 2
+    p
+      line-height: 1.75
+      margin: 20px 0 0
+    img
+      position: absolute
+      top: 100%
+      max-width: 100%
+  &--table
+    width: 100%
+    max-width: 850px
+    margin-left: auto
+  &--work
+    width: 100%
+    margin-bottom: 40px
+    padding-bottom: 40px
+    border-bottom: 1px solid rgba(255,255,255,.15)
+    &:last-child
+      border-bottom: 0
+      margin-bottom: 0
+      padding-bottom: 0
+    @include flexTopLeft
+
+    &-company
+      width: 35%
+      h3
+        text-align: left
+        color: white
+        font-size: 1.6rem
+      h2
+        text-align: left
+        color: $yellowbase
+        text-transform: uppercase
+        font-size: 1rem
+        margin: 7px 0 5px
+    &-desc
+      width: 60%
+      margin: 0 0 0 auto
+      position: relative
+      p
+        color: white
+        line-height: 1.5
+        font-size: .9rem
+        text-align: justify
+        position: relative
+        z-index: 2
+      h4
+        color: $greenlight
+        opacity: 0.25
+        position: absolute
+        bottom: -30px
+        right: -30px
+        font-size: 2.5rem
+        z-index: 1

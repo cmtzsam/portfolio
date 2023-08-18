@@ -17,7 +17,7 @@ export default {
     let textInformation = '.MyServices--info.information';
     let triggetTarget = document.querySelector('.MyServices').previousElementSibling;
     console.dir(triggetTarget);
-    mm.add("(min-width: 600px)", () => {
+    mm.add("(min-width: 1280px)", () => {
       gsap.set(textTitle, { x: -100, opacity: 0 });
       gsap.to(textTitle, {
         opacity: 1,
@@ -54,14 +54,14 @@ export default {
 
       <div class="MyServices--grid">
         <div class="o-grid-row">
-          <div class="col size-xs-12 size-6">
+          <div class="col size-xs-12 size-sm-12 size-6">
             <div class="MyServices--info titles">
               <h4>About me</h4>
               <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
             </div>
             <!-- <img src="https://placehold.co/500x350" alt="MyServices Img" class="img-full-responsive"> -->
           </div>
-          <div class="col size-xs-12 size-6">
+          <div class="col size-xs-12 size-sm-12 size-6">
 
             <div class="MyServices--info information">
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ea quae minima temporibus officiis quas
