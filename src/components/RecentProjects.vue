@@ -1,6 +1,16 @@
 <script setup>
   const projects = [
     {
+      tag: 'Marketing Digital',
+      logo: "../src/assets/images/hs-logo.png",
+      title: "Crypto website development for DeFi X",
+      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident quis beatae unde illum ipsum voluptas voluptatum veniam facilis iste, ut quo magni illo culpa. Explicabo cum earum commodi quo excepturi!",
+      position: "Desarrollador Front-End",
+      tools: ["HubSpot", "HTML5", "JavaScript"],
+      imageUrl: "https://placehold.co/500x400"
+    },
+    {
+      tag: 'Ecommerce',
       logo: "../src/assets/images/hs-logo.png",
       title: "Crypto website development for DeFi X",
       description: "The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.",
@@ -9,14 +19,7 @@
       imageUrl: "https://placehold.co/500x400"
     },
     {
-      logo: "../src/assets/images/hs-logo.png",
-      title: "Crypto website development for DeFi X",
-      description: "The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.",
-      position: "Desarrollador Front-End",
-      tools: ["HubSpot", "HTML5", "JavaScript"],
-      imageUrl: "https://placehold.co/500x400"
-    },
-    {
+      tag: 'Email Marketing',
       logo: "../src/assets/images/hs-logo.png",
       title: "Crypto website development for DeFi X",
       description: "The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.",
@@ -79,21 +82,21 @@
     mounted() {
 
       this.plugins.push(
-        new Arrow(),
+        // new Arrow(),
         new Fade()
       );
 
       // Deshabilitar drag on flicking carousel
       // need add ref="flicking" on template
       this.$refs.flicking.on('holdStart', (e) => {
-        e.stop();
+        // e.stop();
       });
 
 
       // animations
       let mm = gsap.matchMedia();
-      let animateEl = document.querySelectorAll('.RecentProjects--project-data');
-      let triggerEl = animateEl;
+      // let animateEl = document.querySelectorAll('.RecentProjects--project-data');
+      // let triggerEl = animateEl;
       // For dekstop
       mm.add("(min-width: 600px)", () => {
         // gsap.set('.RecentProjects--project-data', { x: 20, opacity: 0 });
@@ -132,42 +135,47 @@
   }
 </script>
 <template>
-  <section class="RecentProjects theme-dark" id="RecentProjects">
-    <h2 class="text-center">Proyectos Recientes</h2>
-    <Flicking ref="flicking" :options="options" :plugins="plugins" id="carrusel2" >
-      <template #viewport>
+  <section class="RecentProjects theme-color" id="RecentProjects">
+    <!-- <h2 class="text-center">Proyectos Recientes</h2> -->
+    <div class="o-container">
+      <div class="o-grid-row">
+        <Flicking ref="flicking" :options="options" :plugins="plugins" id="carrusel2" >
+      <!-- <template #viewport>
         <div class="arrows-container">
           <span class="arrowfli flicking-arrow-prev is-circle"></span>
           <span @click="addEfecttIn" class="arrowfli flicking-arrow-next is-circle"></span>
         </div>
-      </template>
+      </template> -->
       <div v-for="(project, index) in projects" :key="index" class="panel col size-12">
         <div class="RecentProjects--project">
           <div class="RecentProjects--project-data">
-            <div class="RecentProjects--project-logo">
-              <img :src="project.logo" alt="Logo" class="img-responsive">
-            </div>
+            <h5>{{ project.tag }}</h5>
             <h3>{{ project.title }}</h3>
-            <p>{{ project.description }}</p>
             <div class="RecentProjects--project-details">
               <h4>Puesto</h4>
               <p><span>></span> {{ project.position }}</p>
+            </div>
+          </div>
+          <div class="RecentProjects--project-pic">
+            <img :src="project.imageUrl" alt="Carrusel" class="img-full-responsive">
+          </div>
+          <div class="RecentProjects--project-about">
+            <p>
+              {{  project.description  }}
+              <a href="#!">Continuar leyendo...</a>
+            </p>
+            <div class="RecentProjects--project-details">
               <h4>Herramientas / Tecnologias</h4>
               <span v-for="(tool, i) in project.tools" :key="i" class="badge">
                 {{ tool }}
               </span>
             </div>
           </div>
-          <div class="RecentProjects--project-pic">
-            <img :src="project.imageUrl" alt="Carrusel" class="img-full-responsive">
-          </div>
         </div>
       </div>
-    </Flicking>
-    <!-- <div class="o-container">
-      <div class="o-grid-row">
+    </Flicking>        
       </div>
-    </div> -->
+    </div>
 
 
     <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->

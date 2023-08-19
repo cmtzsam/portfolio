@@ -1,9 +1,21 @@
 $fontprincipal: 'Inter', 'Open Sans', sans-serif
 $fonttitulos: 'Trap', 'Inter', sans-serif
-$container-width: 1400px
 $font-size-body: 16px
 
+// Colores
+// $darkcustom: #1b1b1b
+$darkcustom: #000
+$purplebase: #4a148c
+// Evangelion palette colors
+$purpledark: #592661
+$purplelight: #615aa8
+$purplelight-04: rgb(74, 20, 140 , .4)
+$greenlight: #a3da58
+$yellowbase: #f7ba2b
+
+
 // Media queries
+$container-width: 1400px
 // 1440
 $desktop: $container-width
 $desktop-1280: 1280px
@@ -16,16 +28,7 @@ $mobile: 568px
 $mobile-landscape: 480px
 $mobile-portrait: 420px
 
-// Colores
-// $darkcustom: #1b1b1b
-$darkcustom: #000
-$purplebase: #4a148c
-// Evangelion palette colors
-$purpledark: #592661
-$purplelight: #615aa8
-$purplelight-04: rgb(74, 20, 140 , .4)
-$greenlight: #a3da58
-$yellowbase: #f7ba2b
+
 // min desktopBig
 @mixin minDesktopSize
 	@media ( min-width: $desktop)
@@ -163,6 +166,11 @@ $yellowbase: #f7ba2b
 	display: flex
 	align-items: center
 	justify-content: flex-end
+
+@mixin flexEndCenter
+	display: flex
+	align-items: flex-end
+	justify-content: center
 
 @mixin flexEndColumnReverse
 	display: flex
