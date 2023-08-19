@@ -11,11 +11,11 @@ import History from '../components/History/History.vue'
 <template >
 
   <main>
-    <HeroBanner />
-    <MyServices />
-    <Skills />
-    <Statistics />
-    <History /> 
+    <!-- <HeroBanner /> -->
+    <!-- <MyServices /> -->
+    <!-- <Skills /> -->
+    <!-- <Statistics /> -->
+    <!-- <History />  -->
     <RecentProjects />
     
   </main>

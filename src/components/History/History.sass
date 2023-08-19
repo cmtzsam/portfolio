@@ -4,13 +4,37 @@
 
   &.theme-dark
     background-color: $darkcustom
-    padding: 70px 0 500px
+    padding: 70px 0 
   
   &--line
     position: relative
     margin: 0 0 75px
     padding-bottom: 75px
-    // overflow: hidden
+    &.theme-jobs
+      .HistorySection--intro
+        background-color: $darkcustom
+        h4
+          background-color: $greenlight
+      .HistorySection--work-company
+        h2
+          color: $greenlight
+    &.theme-school
+      .HistorySection--intro
+        background-color: $darkcustom
+        h4
+          background-color: $yellowbase
+      .HistorySection--work-company h2,
+      .HistorySection--work-desc h5
+        color: $yellowbase
+    &.theme-courses
+      .HistorySection--intro
+        background-color: $darkcustom
+        h4
+          background-color: $purplelight
+      .HistorySection--work-company h2,
+      .HistorySection--work-desc h5
+        color: $purplelight
+      
     &:last-child
       margin: 0 0
       padding: 0 0
@@ -29,16 +53,22 @@
   &--intro
     width: 100%
     max-width: 450px
-    border-right: 5px solid $greenlight
-    padding: 10px 20px 10px 0px
+    border: 2px solid white
     text-align: right
-    h2,p
+    h4,p
       color: white
       position: relative
       z-index: 2
+    h4
+      padding: 15px 
+      color: $darkcustom      
     p
+      font-size: .9rem
+      font-weight: 600
+      color: white
+      margin: 0 0 0
+      padding: 20px 15px
       line-height: 1.75
-      margin: 20px 0 0
     img
       position: absolute
       top: 100%
@@ -81,7 +111,7 @@
         text-align: justify
         position: relative
         z-index: 2
-      h4
+      h5
         color: $greenlight
         opacity: 0.25
         position: absolute
