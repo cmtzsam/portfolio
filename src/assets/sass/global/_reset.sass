@@ -42,8 +42,12 @@ h1
 
 h2
   font-size: 2rem
+  @include mobileToPhablet
+    font-size: 1.7rem  
   @include maxMobile
     font-size: 1.6rem	
+  @include maxMobileLandscape
+    font-size: 1.3rem
 
 h3
   font-size: 1.8rem

@@ -8,25 +8,35 @@
   z-index: 6
   position: relative
   z-index: 1  
-  @include maxPhablet
-    padding: 50px 0
-  @include maxMobile
-    padding: 40px 0
-    margin-bottom: 40px
-  @include maxMobilePortrait
-    margin-bottom: 0px
+  // @include maxPhablet
+  //   padding: 50px 0
+  // @include maxMobile
+  //   padding: 40px 0
+  //   margin-bottom: 40px
+  // @include maxMobilePortrait
+  //   margin-bottom: 0px
 
 
   &.theme-dark
     background-color: $darkcustom
-    padding: 0 0 
+    padding: 0 0 30px
     margin-top: -100px
+    margin-top: 0
+    @include maxMobile
+      padding: 25px 0
+    @include maxMobilePortrait
+      padding: 15px 0    
     .o-container
       background-color: white
-      padding: 120px 0 70px
+      padding: 60px 0 
       border-radius: 15px
-      border-bottom-left-radius: 0
-      border-bottom-right-radius: 0
+      @include mobileToPortrait
+        padding: 30px 10px 10px
+      @include maxMobile
+        padding: 30px 10px 15px
+      // max-width: 1140px
+      // border-bottom-left-radius: 0
+      // border-bottom-right-radius: 0
 
     .Statistics--info
       h3
@@ -36,20 +46,8 @@
 
   .o-grid-row
     .col
-      &:nth-child(2)
-        @include minPhablet
-          border-left: 1px solid rgb(163 , 218 , 88 , .4)
-          border-right: 1px solid rgb(163 , 218 , 88 , .4)
-        // @include maxPhablet
-        //   margin: 0 0 50px
-        // @include maxMobile
-        //   margin: 30px auto
-        //   padding: 30px 0
-        // @include maxMobilePortrait
-        //   margin: 30px auto
-        //   padding: 30px 0
-          // border-top: 1px solid rgb(163 , 218 , 88 , .4)
-          // border-bottom: 1px solid rgb(163 , 218 , 88 , .4) 
+      @include minTabletPortrait
+        border-left: 1px solid $greenlight
       &:last-child
         .Statistics--info
           @include maxMobile
@@ -58,15 +56,27 @@
 
   h2
     text-align: center
-    margin: 0 auto 70px
+    margin: 0 auto 80px
     width: 100%
     max-width: 890px
+    @include mobileToPortrait
+      margin-bottom: 50px
+      padding: 0 10px
+    @include maxMobile
+      margin-bottom: 30px
+      padding: 0 10px
+    @include maxMobilePortrait
+      margin-bottom: 30px
+      line-height: 1.35
+      padding: 0 10px
+    span
+      color: $greenlight
+      // text-decoration: underline
 
   &--info
-    @include maxMobile
-      max-width: 300px
-      margin-left: auto
-      margin-right: auto
+    @include maxTabletPortrait
+      width: 100%
+      margin: 20px auto 40px
 
     h3, p
       text-align: center
@@ -76,8 +86,15 @@
       color: $greenlight
       @include maxMobile
         font-size: 2.5rem
+      @include maxMobileLandscape
+        font-size: 2.75rem
     p
       font-size: .9rem
+      font-weight: 600
+      padding: 0 10px
+      text-align: center
+      @include maxMobileLandscape
+        font-size: .75rem
 
 
 
