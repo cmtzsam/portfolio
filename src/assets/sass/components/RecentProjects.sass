@@ -5,79 +5,10 @@
   // padding: 50px 0
   padding: 0 0
   overflow: hidden
-  @include tabletPortraitToDesktopSmall
+  @include tabletPortraitTo1280
     padding: 15px 0 50px
   @include phabletToTablet
     padding: 50px 0
-
-
-  &.theme-color
-    background-color: $greenlight
-    padding: 30px 0
-    .o-container
-      background-color: $darkcustom
-    h2
-      color: $darkcustom
-      margin: 0 0 
-    .RecentProjects--project,
-    .arrows-container .arrowfli
-      background-color: $darkcustom
-    .RecentProjects--project-details span.badge
-      color: $darkcustom
-    // begins project custom
-    .RecentProjects--project
-      margin-bottom: 0
-      width: 100%
-      max-width: $desktop-1280
-      padding: 50px 20px
-    .RecentProjects--project-data
-      h5
-        color: white
-    .RecentProjects--project-pic
-      width: 100%
-      min-width: 550px
-      max-width: 550px
-      height: 550px
-      @include flexEndCenter
-      border-radius: 50%
-      overflow: hidden
-      background-color: $greenlight
-      margin: 0 auto
-      img
-        max-width: 500px
-
-
-    .RecentProjects--project-data
-      width: 25%
-      display: flex
-      flex-flow: column
-      .RecentProjects--project-details      
-        margin-top: auto
-    .RecentProjects--project-about
-      width: 25%
-      margin-top: auto
-      text-align: left
-      p
-        line-height: 1.5
-        margin-bottom: 50px
-        font-size: .9rem
-        a
-          display: block
-          margin-top: 15px
-          text-decoration: underline
-
-  &.theme-dark
-    background-color: $darkcustom
-    padding-top: 0
-    h2
-      color: $darkcustom
-      margin: 0 0 
-    .RecentProjects--project,
-    .arrows-container .arrowfli
-      background-color: $darkcustom
-    .RecentProjects--project-details span.badge
-      color: $darkcustom
-  
   h2
     color: white
     margin-bottom: 50px
@@ -88,8 +19,6 @@
     width: 100%
     max-width: 1024px
     margin: 0 auto 30px
-    // border-radius: 6px    
-    // @include flexCenter
     display: flex
     @include maxTabletPortrait
       display: block
@@ -98,7 +27,6 @@
     &-data
       width: 100%
       max-width: 470px
-      // padding: 30px 15px
       @include phabletToTablet
         padding: 20px
       @include maxTabletPortrait
@@ -116,6 +44,10 @@
       margin: 10px 0
       line-height: 1.5
       color: $greenlight
+      @include tabletPortraitTo1280
+        font-size: 1.5rem
+      @include maxPhablet
+        margin: 10px 0 30px
     p
       line-height: 1.5
       font-size: 1.1rem
@@ -125,10 +57,14 @@
       h4
         color: $yellowbase
         margin: 0 0 10px
+        @include tabletPortraitTo1280
+          font-size: 1.15rem
       p
         font-size: 1.05rem
         margin: 10px 0 0px
         line-height: 1
+        @include tabletPortraitTo1280
+          font-size: 1rem
         span
           color: $yellowbase
           font-weight: bold
@@ -144,19 +80,6 @@
         background-color: $greenlight
         border-radius: 3px
 
-    // Project Picture 
-    &-pic
-      width: 100%
-      max-width: 500px
-      @include maxTabletPortrait
-        margin: 0 auto 
-      img
-        position: relative
-        // right: -60px
-        // @include phabletToTablet
-        //   right: -15px
-        // @include maxTabletPortrait
-        //   right: 0
 
 
 
@@ -172,7 +95,7 @@
     width: 100%
     max-width: 1024px
     margin: 0 auto 20px
-    @include maxTabletLandscape
+    @include maxTabletPortrait
       padding: 0 15px
     .arrowfli
       position: relative
@@ -186,3 +109,107 @@
       &.flicking-arrow-disabled
         background-color: transparent
         opacity: .5
+
+
+
+  // themes
+  &.theme-color
+    background-color: $greenlight
+    padding: 30px 0
+    .o-container
+      background-color: $darkcustom
+    .o-grid-row
+      .col
+        @include maxTabletPortrait
+          padding: 0 0
+    h2
+      color: $darkcustom
+      margin: 0 0 
+    .RecentProjects--project,
+    .arrows-container .arrowfli
+      background-color: $darkcustom
+    .RecentProjects--project-details span.badge
+      color: $darkcustom
+    // begins project custom
+    // main project
+    .RecentProjects--project
+      margin-bottom: 0
+      width: 100%
+      max-width: $desktop-1280
+      padding: 50px 20px
+      @include tabletPortraitTo1280
+        padding: 25px 15px 
+      @include maxTabletPortrait
+        padding: 0
+        // padding: 30px
+    // end main project
+    .RecentProjects--project-pic
+      width: 100%
+      min-width: 550px
+      max-width: 550px
+      height: 550px
+      @include flexEndCenter
+      border-radius: 50%
+      overflow: hidden
+      background-color: $greenlight
+      margin: 0 auto
+      @include tabletPortraitTo1280
+        min-width: 300px
+        max-width: 300px
+        height: 300px
+      @include maxTabletPortrait
+        width: 100%
+        max-width: 100%
+        border: 1px solid white
+        margin: 0 auto
+        height: 250px
+        min-width: 0
+        border-radius: 0     
+        @include flexEndCenter 
+        align-items: center
+      @include maxMobile
+        border: 0
+      @include maxMobilePortrait
+        height: 200px
+      img
+        max-width: 500px
+
+    .RecentProjects--project-data
+      width: 25%
+      display: flex
+      flex-flow: column
+      @include tabletPortraitTo1280
+        width: 30%
+      @include maxTabletPortrait
+        width: 100%
+        max-width: 100%
+        padding: 20px
+        margin-bottom: 0
+      @include maxMobile
+        padding: 30px 20px
+
+      h5
+        color: white      
+      .RecentProjects--project-details      
+        margin-top: auto
+    .RecentProjects--project-about
+      width: 25%
+      margin-top: auto
+      text-align: left
+      @include tabletPortraitTo1280
+        width: 30%
+      @include maxTabletPortrait
+        width: 100%  
+        margin: 0 auto
+        padding: 20px    
+      p
+        line-height: 1.5
+        margin-bottom: 50px
+        font-size: .9rem
+        @include tabletPortraitTo1280
+          font-size: .8rem
+        a
+          display: block
+          margin-top: 15px
+          text-decoration: underline  
+          font-size: inherit
