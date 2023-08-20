@@ -1,27 +1,27 @@
 <script setup>
   const projects = [
     {
-      tag: 'Marketing Digital',
+      tag: 'Marketing Digital 1',
       logo: "../src/assets/images/hs-logo.png",
-      title: "Crypto website development for DeFi X",
+      title: "Crypto website development for DeFi 1",
       description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident quis beatae unde illum ipsum voluptas voluptatum veniam facilis iste, ut quo magni illo culpa. Explicabo cum earum commodi quo excepturi!",
       position: "Desarrollador Front-End",
       tools: ["HubSpot", "HTML5", "JavaScript"],
       imageUrl: "https://placehold.co/500x400"
     },
     {
-      tag: 'Ecommerce',
+      tag: 'Ecommerce 2',
       logo: "../src/assets/images/hs-logo.png",
-      title: "Crypto website development for DeFi X",
+      title: "Crypto website development for DeFi 2",
       description: "The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.",
       position: "Desarrollador Front-End",
       tools: ["HubSpot", "HTML5", "JavaScript"],
       imageUrl: "https://placehold.co/500x400"
     },
     {
-      tag: 'Email Marketing',
+      tag: 'Email Marketing 3',
       logo: "../src/assets/images/hs-logo.png",
-      title: "Crypto website development for DeFi X",
+      title: "Crypto website development for DeFi 3",
       description: "The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.",
       position: "Desarrollador Front-End",
       tools: ["HubSpot", "HTML5", "JavaScript"],
@@ -59,74 +59,81 @@
         },
       }
     },
-    methods: {
-
-      addEfecttIn() {
-        // gsap.set('.RecentProjects--project-data', { x: 20 });
-        // gsap.to('.RecentProjects--project-data', {
-        //   x: 0,
-        //   opacity: 1,
-        //   ease: "none",
-        //   duration: 1,
-        // });
-        // gsap.set('.RecentProjects--project-pic', { x: -20 });
-        // gsap.to('.RecentProjects--project-pic', {
-        //   x: 0,
-        //   opacity: 1,
-        //   ease: "none",
-        //   duration: 1,
-        // });
-      }
-
-    },
     mounted() {
 
+      // var and const
+      const categoriesTitles = document.querySelectorAll('.RecentProjects--project-data h5');      
+      let category_h5_current;
+      let category_h5_previous;
+      let title_h3_current;
+      let title_h3_previous;
+      let description_current;
+      let description_previous;
+      let project_details_current;
+      let project_details_previous;
+      let project_pic_current;
+      let project_pic_previous;
+      // Plugins for Flicking
       this.plugins.push(
-        // new Arrow(),
-        new Fade()
+        new Arrow(),
+        // new Fade()
       );
+      
+      // Disabled input, just buttons
+      // adjust for just disabled in desktop
+      // need add ref="flicking" on template      
+      this.$refs.flicking.disableInput();
+      this.$refs.flicking.duration = 1000;
 
-      // Deshabilitar drag on flicking carousel
-      // need add ref="flicking" on template
-      this.$refs.flicking.on('holdStart', (e) => {
-        // e.stop();
+      // Cuando empieza a cambiar
+      this.$refs.flicking.on('moveStart', (e) => {
+        
+        switch(e.direction){
+          case 'NEXT':
+            category_h5_previous = e.currentTarget.getPanel( (e.currentTarget.index+1) ).element.querySelector('h5');
+            title_h3_previous = e.currentTarget.getPanel( (e.currentTarget.index+1) ).element.querySelector('h3');
+            description_previous = e.currentTarget.getPanel( (e.currentTarget.index+1) ).element.querySelector('.RecentProjects--project-about');
+            project_details_previous = e.currentTarget.getPanel( (e.currentTarget.index+1) ).element.querySelectorAll('.RecentProjects--project-details');
+            project_pic_previous = e.currentTarget.getPanel( (e.currentTarget.index+1) ).element.querySelectorAll('.RecentProjects--project-pic');
+            break;
+            case 'PREV':
+            category_h5_previous = e.currentTarget.getPanel( (e.currentTarget.index-1) ).element.querySelector('h5');
+            title_h3_previous = e.currentTarget.getPanel( (e.currentTarget.index-1) ).element.querySelector('h3');
+            description_previous = e.currentTarget.getPanel( (e.currentTarget.index-1) ).element.querySelector('.RecentProjects--project-about');
+            project_details_previous = e.currentTarget.getPanel( (e.currentTarget.index-1) ).element.querySelectorAll('.RecentProjects--project-details');
+            project_pic_previous = e.currentTarget.getPanel( (e.currentTarget.index-1) ).element.querySelectorAll('.RecentProjects--project-pic');            break;
+          default:
+          break;
+        };
+
+        // Animation for h5
+        category_h5_current = e.currentTarget.getPanel( (e.currentTarget.index) ).element.querySelector('h5');
+        gsap.fromTo( category_h5_current, { x: 0, opacity: 1 },{ x: -100, opacity: 0, duration: 1.05 } );        
+        gsap.fromTo( category_h5_previous, { x: -100, opacity: 0 },{ x: 0, opacity: 1, duration: 1.05 } );
+        // Animation for h3
+        title_h3_current = e.currentTarget.getPanel( (e.currentTarget.index) ).element.querySelector('h3');
+        gsap.fromTo( title_h3_current, { x: 0, opacity: 1 },{ x: -115, opacity: 0, duration: 1.25 } );        
+        gsap.fromTo( title_h3_previous, { x: -115, opacity: 0 },{ x: 0, opacity: 1, duration: 1.25 } );
+        // Project desc
+        description_current = e.currentTarget.getPanel( (e.currentTarget.index) ).element.querySelector('.RecentProjects--project-about');
+        gsap.fromTo( description_current, { x: 0, opacity: 1 },{ x: 200, opacity: 0, duration: 1.35 } );        
+        gsap.fromTo( description_previous, { x: 200, opacity: 0 },{ x: 0, opacity: 1, duration: 1.35 } );
+        // Project details
+        project_details_current = e.currentTarget.getPanel( (e.currentTarget.index) ).element.querySelectorAll('.RecentProjects--project-details');
+        gsap.fromTo( project_details_current, { y: 0, opacity: 1 },{ y: 20, opacity: 0, duration: 1.5 } );        
+        gsap.fromTo( project_details_previous, { y: 20, opacity: 0 },{ y: 0, opacity: 1, duration: 1.5 } );
+        // Project picture
+        project_pic_current = e.currentTarget.getPanel( (e.currentTarget.index) ).element.querySelector('.RecentProjects--project-pic');
+        gsap.fromTo( project_pic_current, {opacity: 1 },{ opacity: 0, duration: 1.1 } );        
+        gsap.fromTo( project_pic_previous, { opacity: 0 },{ opacity: 1, duration: 1.1 } );
       });
 
-
+      
       // animations
       let mm = gsap.matchMedia();
-      // let animateEl = document.querySelectorAll('.RecentProjects--project-data');
-      // let triggerEl = animateEl;
       // For dekstop
       mm.add("(min-width: 600px)", () => {
-        // gsap.set('.RecentProjects--project-data', { x: 20, opacity: 0 });
-        // gsap.to(animateEl, {
-        //   x: 0,
-        //   opacity: 1,
-        //   ease: "none",
-        //   duration: 1,
-        //   scrollTrigger: {
-        //     // markers: true,
-        //     start: "top 0%",
-        //     end: "50% 50%",
-        //     trigger: triggerEl.previousElementSibling,
-        //     scrub: false,
-        //   },
-        // });
-        // gsap.set('.RecentProjects--project-pic', { x: -20, opacity: 0 });
-        // gsap.to('.RecentProjects--project-pic', {
-        //   x: 0,
-        //   opacity: 1,
-        //   ease: "none",
-        //   duration: 1,
-        //   scrollTrigger: {
-        //     // markers: true,
-        //     start: "top 0%",
-        //     end: "50% 50%",
-        //     trigger: triggerEl.previousElementSibling,
-        //     scrub: false,
-        //   },
-        // });
+
       });
 
 
@@ -139,13 +146,19 @@
     <!-- <h2 class="text-center">Proyectos Recientes</h2> -->
     <div class="o-container">
       <div class="o-grid-row">
+
+        <!-- <div class="flechas">
+          <p @click="prevPanel" style="color: white;">Antes</p>
+          <p @click="nextPanel" style="color: white;">Siguiente</p>
+        </div> -->
+
         <Flicking ref="flicking" :options="options" :plugins="plugins" id="carrusel2" >
-      <!-- <template #viewport>
+      <template #viewport>
         <div class="arrows-container">
           <span class="arrowfli flicking-arrow-prev is-circle"></span>
-          <span @click="addEfecttIn" class="arrowfli flicking-arrow-next is-circle"></span>
+          <span @click="startAnim" class="arrowfli flicking-arrow-next is-circle"></span>
         </div>
-      </template> -->
+      </template>
       <div v-for="(project, index) in projects" :key="index" class="panel col size-12">
         <div class="RecentProjects--project">
           <div class="RecentProjects--project-data">
