@@ -71,7 +71,7 @@ export default {
     );
 
 
-    this.$refs.flicking.on('moveStart', (e) => {
+    this.$refs.flicking.on('willChange', (e) => {
       const MAIN_SECTION = document.querySelector('#RecentProjects');
       let current_Panel = e.currentTarget.currentPanel;
       let current_Project;

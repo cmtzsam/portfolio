@@ -15,8 +15,8 @@ import History from '../components/History/History.vue'
     <!-- <MyServices /> -->
     <!-- <Skills /> -->
     <!-- <Statistics /> -->
-    <!-- <History />  -->
-    <RecentProjects />
+    <History /> 
+    <!-- <RecentProjects /> -->
     
   </main>
 </template>

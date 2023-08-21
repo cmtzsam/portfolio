@@ -22,7 +22,7 @@ export default {
     const tableEl = document.querySelectorAll('.HistorySection--table');
     // console.log(tableEl)
     // For dekstop
-    mm.add("(min-width: 600px)", () => {
+    mm.add("(min-width: 1140px)", () => {
 
       gsap.set( tableEl, ({ opacity: 0, y: "-45%" }) );
 
