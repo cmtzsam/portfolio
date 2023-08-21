@@ -45,34 +45,40 @@ export default {
 
     // animations
     let mm = gsap.matchMedia();
+    const text_to_left = document.querySelectorAll('.HeroBanner h1 span.toleft');
+    const text_to_right = document.querySelectorAll('.HeroBanner h1 span.toright');
     // For dekstop
     mm.add("(min-width: 600px)", () => {
+      gsap.set( text_to_left, { opacity: 0 } )
+      gsap.set( text_to_right, { opacity: 0 } )
+      gsap.fromTo( text_to_left, { x: 0 }, { x: -100, opacity: 1 } )
+      gsap.fromTo( text_to_right, { x: 0 }, { x: 100, opacity: 1 } )
       // gsap.set('.HeroBanner--text', { y: 100 });
-      gsap.to(".HeroBanner--text", {
-        y: 60,
-        ease: "none",
-        scrollTrigger: {
-          start: "top 0",
-          trigger: "#HeroBanner",
-          scrub: 1,
-        },
-      });
-      gsap.to(".my-element .toright", {
-        x: 200,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".my-element .toright",
-          scrub: 1,
-        },
-      });
-      gsap.to(".my-element .toleft", {
-        x: -100,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".my-element .toleft",
-          scrub: 1
-        },
-      });
+      // gsap.to(".HeroBanner--text", {
+      //   y: 60,
+      //   ease: "none",
+      //   scrollTrigger: {
+      //     start: "top 0",
+      //     trigger: "#HeroBanner",
+      //     scrub: 1,
+      //   },
+      // });
+      // gsap.to(".my-element .toright", {
+      //   x: 200,
+      //   ease: "none",
+      //   scrollTrigger: {
+      //     trigger: ".my-element .toright",
+      //     scrub: 1,
+      //   },
+      // });
+      // gsap.to(".my-element .toleft", {
+      //   x: -100,
+      //   ease: "none",
+      //   scrollTrigger: {
+      //     trigger: ".my-element .toleft",
+      //     scrub: 1
+      //   },
+      // });
     });
 
     // For mobile
@@ -111,11 +117,11 @@ export default {
 </script>
 
 <template>
-  <LoadScreen v-if="isLoading" />
-  <section class="HeroBanner" id="HeroBanner">
+  <!-- <LoadScreen v-if="isLoading" /> -->
+  <section class="HeroBanner theme-dark" id="HeroBanner">
     <div class="o-container">
       <h1 class="my-element">
-        <span class="toleft">Carlos A. M.</span>
+        <span class="toleft">Carlos A. Mtz.</span>
         <span class="toright">Samaniego</span>
       </h1>
     </div>
@@ -129,8 +135,8 @@ export default {
             <div class="HeroBanner--text">
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis perferendis non, ullam molestias
-                obcaecati deleniti quos sapiente laudantium! Hic ut quas aperiam enim, consequuntur laborum odit pariatur
-                minus maiores!
+                 <span class="blink_text">obcaecati deleniti quos sapiente</span> laudantium! Hic ut quas aperiam enim, consequuntur laborum odit pariatur
+                <span>minus maiores</span> !
               </p>
               <router-link to="/about"> > <span>Curriculum Vitae</span> </router-link>
             </div>

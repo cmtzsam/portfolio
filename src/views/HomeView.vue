@@ -13,14 +13,14 @@ import History from '../components/History/History.vue'
 <template >
 
   <main>
-    <Header />
+    <!-- <Header /> -->
     <HeroBanner />
     <MyServices />
     <Skills />
-    <Statistics />
-    <History /> 
-    <RecentProjects />
-    <Footer />
+    <!-- <Statistics /> -->
+    <!-- <History />  -->
+    <!-- <RecentProjects /> -->
+    <!-- <Footer /> -->
     
   </main>
 </template>
