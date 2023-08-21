@@ -1,6 +1,8 @@
 <script setup>
 // import { ref } from 'vue'
 // const show = ref(true)
+import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
 import HeroBanner from '../components/HeroBanner.vue';
 import Statistics from '../components/Statistics.vue';
 import Skills from '../components/Skills.vue'
@@ -11,12 +13,14 @@ import History from '../components/History/History.vue'
 <template >
 
   <main>
-    <!-- <HeroBanner /> -->
-    <!-- <MyServices /> -->
-    <!-- <Skills /> -->
-    <!-- <Statistics /> -->
+    <Header />
+    <HeroBanner />
+    <MyServices />
+    <Skills />
+    <Statistics />
     <History /> 
-    <!-- <RecentProjects /> -->
+    <RecentProjects />
+    <Footer />
     
   </main>
 </template>

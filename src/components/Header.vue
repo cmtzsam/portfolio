@@ -5,8 +5,8 @@
     <div class="o-container">
       <nav class="HeaderMainMenu--nav">
         <a class="HeaderMainMenu--logo" href="#!">
-          <!-- <img src="../assets/images/logo.png" alt="Codificarlos" class="img-full-responsive"> -->
-          <img src="https://placehold.co/220x40" alt="Codificarlos" class="img-full-responsive">
+          <img src="../assets/images/logo.png" alt="Codificarlos" class="img-full-responsive">
+          <!-- <img src="https://placehold.co/220x40" alt="Codificarlos" class="img-full-responsive"> -->
         </a>
         <div class="HeaderMainMenu--openmenu">
           <span class="top-bar"></span><span class="middle-bar"></span><span
@@ -15,16 +15,13 @@
         <div class="HeaderMainMenu--menu">
           <ul class="HeaderMainMenu--menulist">
             <li class="HeaderMainMenu--link">
-              <router-link to="/">Home</router-link>
+              <router-link to="/">Inicio</router-link>
             </li>
-            <li class="HeaderMainMenu--link">
-              <router-link to="/about">About</router-link>
+            <li>
+              <span style="opacity: .25;">Soon</span>
             </li>
             <!-- <li class="HeaderMainMenu--link">
-              <router-link to="/about">Blog</router-link>
-            </li>
-            <li class="HeaderMainMenu--link">
-              <router-link to="/about">Reach Out</router-link>
+              <router-link to="/about">About</router-link>
             </li> -->
           </ul>
 
