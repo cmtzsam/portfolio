@@ -1,5 +1,6 @@
 <script setup>
 import BannerHeroDots from "./svg/herobanner-dots.vue";
+import ArrowRight from "./svg/ArrowRight.vue";
 import LoadScreen from "./LoadScreen.vue"
 </script>
 
@@ -33,7 +34,9 @@ export default {
         moveType: "strict",
         circular: true,
       },
-      isLoading: true
+      isLoading: true,
+      // blink text
+            
     }
   },
   mounted() {
@@ -47,38 +50,38 @@ export default {
     let mm = gsap.matchMedia();
     const text_to_left = document.querySelectorAll('.HeroBanner h1 span.toleft');
     const text_to_right = document.querySelectorAll('.HeroBanner h1 span.toright');
+    const carousel_el = document.querySelector('.HeroBanner--carousel');
+    const text_desc_p = document.querySelector('.HeroBanner--text p');
+    const text_desc_arrow = document.querySelector('.HeroBanner--text .arrow-down');
+    
+    let animateTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".HeroBanner",
+        scrub: true,
+        start: "top center",
+        toggleActions: "play none none reverse",
+      }
+    });
+
     // For dekstop
-    mm.add("(min-width: 600px)", () => {
-      gsap.set( text_to_left, { opacity: 0 } )
-      gsap.set( text_to_right, { opacity: 0 } )
-      gsap.fromTo( text_to_left, { x: 0 }, { x: -100, opacity: 1 } )
-      gsap.fromTo( text_to_right, { x: 0 }, { x: 100, opacity: 1 } )
-      // gsap.set('.HeroBanner--text', { y: 100 });
-      // gsap.to(".HeroBanner--text", {
-      //   y: 60,
-      //   ease: "none",
-      //   scrollTrigger: {
-      //     start: "top 0",
-      //     trigger: "#HeroBanner",
-      //     scrub: 1,
-      //   },
-      // });
-      // gsap.to(".my-element .toright", {
-      //   x: 200,
-      //   ease: "none",
-      //   scrollTrigger: {
-      //     trigger: ".my-element .toright",
-      //     scrub: 1,
-      //   },
-      // });
-      // gsap.to(".my-element .toleft", {
-      //   x: -100,
-      //   ease: "none",
-      //   scrollTrigger: {
-      //     trigger: ".my-element .toleft",
-      //     scrub: 1
-      //   },
-      // });
+    mm.add("(min-width: 960px)", () => {
+      gsap.fromTo( text_to_left, { opacity: 0 }, { opacity: 1, duration: .9 } )
+      gsap.fromTo( text_to_right, { opacity: 0 }, { opacity: 1, duration: .9 } )
+      gsap.fromTo( carousel_el, { x: 20 }, { x: 0, opacity: 1, duration: 1.1 } )
+      gsap.fromTo( text_desc_p, { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 1.1 } )
+      gsap.fromTo( text_desc_arrow, { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2 } )
+
+      animateTL.to(text_to_left, {
+        x: -100,
+        ease: "none",
+        duration: 4,
+      });
+      animateTL.to(text_to_right, {
+        x: 100,
+        ease: "none",
+        duration: 4,
+      });
+
     });
 
     // For mobile
@@ -112,13 +115,17 @@ export default {
     renderBullet: function (index, defaultClassName) {
       return `<span class="line-dot ${defaultClassName}-custom"></span>`;
     },
+    scrollToBottom(){
+      // console.log(this.$refs['herobanner'].nextElementSibling);
+      this.$refs['herobanner'].nextElementSibling.scrollIntoView({behavior: "smooth"})
+    }      
   },
 }
 </script>
 
 <template>
   <!-- <LoadScreen v-if="isLoading" /> -->
-  <section class="HeroBanner theme-dark" id="HeroBanner">
+  <section class="HeroBanner theme-dark" id="HeroBanner" ref="herobanner">
     <div class="o-container">
       <h1 class="my-element">
         <span class="toleft">Carlos A. Mtz.</span>
@@ -134,11 +141,12 @@ export default {
           <div class="col size-sm-12 size-6">
             <div class="HeroBanner--text">
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis perferendis non, ullam molestias
-                 <span class="blink_text">obcaecati deleniti quos sapiente</span> laudantium! Hic ut quas aperiam enim, consequuntur laborum odit pariatur
-                <span>minus maiores</span> !
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur iure enim suscipit non quos? Perferendis excepturi, voluptatum repudiandae maiores dolores ea vitae porro consectetur. Architecto eos dolorem quae amet vitae?
               </p>
-              <router-link to="/about"> > <span>Curriculum Vitae</span> </router-link>
+              <span @click="scrollToBottom" class="arrow-down">
+                <ArrowRight  />
+              </span>
+              <!-- <router-link to="/about"> > <span>Curriculum Vitae</span> </router-link> -->
             </div>
 
           </div>

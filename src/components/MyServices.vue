@@ -49,7 +49,7 @@ export default {
 
 </script>
 <template>
-  <section class="MyServices theme-dark" id="MyServices">
+  <section class="MyServices theme-dark" id="MyServices" ref="bottom">
     <div class="o-container">
 
       <div class="MyServices--grid">

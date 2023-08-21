@@ -11,16 +11,48 @@
     background-color: $darkcustom
     h1
       color: white
-      text-shadow: 5px 5px 0px $darkcustom
+      text-shadow: 2px 2px 0px $darkcustom
       letter-spacing: -9px
-      span
-        opacity: 0
+      // span
+        // scale: 1
+        // transform: translate(0,0)
+        // opacity: 0
     p
       color: white
       span
         color: $greenlight
         font-weight: 600
+    .arrow-down
+      display: table
+      margin: 30px 0 0 auto
+      transform: rotate(90deg)
+      border: 2px solid white
+      padding: 8px 8px 5px 5px
+      cursor: pointer
+      transition: all .1s linear
+      @include maxTabletPortrait
+        margin-left: auto
+        margin-right: auto
 
+      &:hover
+        background-color: $greenlight
+        border-color: $greenlight
+        svg
+          stroke: $darkcustom
+      svg
+        stroke: white
+        width: 30px
+        height: 16px
+
+    .HeroBanner--carousel
+      position: relative
+      @include minTabletPortrait
+        opacity: 0
+    .HeroBanner--text
+      p,
+      span.arrow-down
+        @include minTabletPortrait
+          opacity: 0
   h1
     line-height: .9
     z-index: 3
@@ -35,19 +67,15 @@
     span.toleft
       display: block
       position: relative
-      @include minDesktop1280
-        opacity: 0
     span.toright
       display: block
-      @include minDesktop1280
-        opacity: 0
-      // margin-left: 70px
-      // @include mobileToPortrait
-      //   display: inline
-      //   margin-left: 0
-      // @include maxMobile
-      //   display: inline
-      //   margin-left: 0
+      margin-left: 70px
+      @include mobileToPortrait
+        display: inline
+        margin-left: 0
+      @include maxMobile
+        display: inline
+        margin-left: 0
     // 960 - 1024
     @include tabletPortraitToTabletLandscape
       font-size: 5.5rem
