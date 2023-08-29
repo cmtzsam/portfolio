@@ -1,6 +1,6 @@
-<script setup >
+<!-- <script setup >
 import ArrowRight from './svg/arrowright.vue'
-</script>
+</script> -->
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
