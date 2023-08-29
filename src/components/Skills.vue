@@ -121,7 +121,8 @@ export default {
 
             <div class="Skills--card" @touchstart="cardActive" @mouseenter="cardActive" @mouseleave="cardInactive">
 
-              <img :src="skill.image" :alt="skill.titulo" />
+              <!-- <img :src="skill.image" :alt="skill.titulo" /> -->
+              <img src="../assets/images/skill-img.jpg" alt="Imagen" />
               <div class="Skills--card-desc">
                 <div class="Skills--card-title">
                   {{ skill.titulo }}
