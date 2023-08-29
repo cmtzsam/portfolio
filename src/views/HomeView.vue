@@ -8,19 +8,21 @@ import Statistics from '../components/Statistics.vue';
 import Skills from '../components/Skills.vue'
 import MyServices from '../components/MyServices.vue'
 import RecentProjects from '../components/RecentProjects.vue'
+import Contact from '../components/Contact.vue'
 import History from '../components/History/History.vue'
 </script>
 <template >
 
   <main>
-    <!-- <Header /> -->
+    <Header />
     <HeroBanner />
     <MyServices />
     <Skills />
-    <!-- <Statistics /> -->
-    <!-- <History />  -->
-    <!-- <RecentProjects /> -->
-    <!-- <Footer /> -->
+    <Statistics />
+    <RecentProjects />
+    <History /> 
+    <Contact />
+    <Footer />
     
   </main>
 </template>

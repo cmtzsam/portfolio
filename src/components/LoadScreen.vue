@@ -11,11 +11,14 @@ export default {
 <style>
 #loading {
   position: absolute;
-  z-index: 1000;
+  z-index: 10001;
   background-color: white;
   height: 100vh;
   width: 100vw;
   text-align: center;
   line-height: 100vh;
+  top: 0;
+  left:  0;
+  overflow: hidden;
 }
 </style>

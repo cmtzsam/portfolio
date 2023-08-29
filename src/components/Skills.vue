@@ -12,22 +12,22 @@ export default {
       skills: [
         {
           image: "../src/assets/images/skill-img.jpg",
-          titulo: 'Desarrollo web en Marketing digital',
-          description: 'Diseño y codificación web para experiencias digitales de impacto. ',
+          titulo: 'Desarrollo web para Marketing digital',
+          description: 'Desarrollo de landings page, sitios web e integración de plataformas.',
           linkTo: 'about',
           footerImage: 'https://placehold.co/40x40'
         },
         {
           image: '../src/assets/images/skill-img.jpg',
-          titulo: 'Desarrollo web en Ecommerce',
-          description: 'Diseño y codificación web para experiencias digitales de impacto. ',
+          titulo: 'Desarrollo web para Ecommerce',
+          description: 'Carga de productos, ajustes de contenido, soluciones a la medida y desarrollo de plantillas.',
           linkTo: 'about',
           footerImage: 'https://placehold.co/40x40'
         },
         {
           image: '../src/assets/images/skill-img.jpg',
           titulo: 'Desarrollo web para Email Marketing',
-          description: 'Diseño y codificación web para experiencias digitales de impacto. ',
+          description: 'Construccion de plantillas en código HTML para correos electrónicos.',
           linkTo: 'about',
           footerImage: 'https://placehold.co/40x40'
         }
@@ -39,19 +39,49 @@ export default {
     ScrollTrigger,
   },
   mounted() {
+    
+    const skill_el = document.querySelectorAll(".Skills--card");
+
+    let animateTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".HeroBanner",
+        scrub: true,
+        start: "top center",
+        toggleActions: "play none none reverse",
+      }
+    });
+
     // animations
     let mm = gsap.matchMedia();
     // For dekstop
-    mm.add("(min-width: 600px)", () => {
-      gsap.to(".Skills--card", {
-        yPercent: -30,
-        ease: "none",
+    mm.add("(min-width: 960px)", () => {
+      animateTL.to(skill_el, {
+        y: -70,
         scrollTrigger: {
-          trigger: ".Skills--card",
-          scrub: true,
+          // markers: true,
+          start: '50% 5%',
+          end: '100% 10%',
+          trigger: document.querySelector('.Skills').previousElementSibling,
+          scrub: true
         },
-      });
+      });    
     });
+    // mm.add("(max-width: 960px)", () => {
+      // Array.from( skill_el ).forEach( (skill, index = 1) => {
+        // gsap.set( skill, { opacity: 0, x: "100" + (index * 10) + "%" } )
+        // gsap.set( skill, { opacity: 0, x: "100%" } )
+        // animateTL.to(skill, {
+        //   x: 0,
+        //   opacity: 1,
+        //   scrollTrigger: {
+        //     start: '-50% 0',
+        //     end: '-20% 0',
+        //     trigger: skill,
+        //     scrub: true,
+        //   },
+        // });    
+      // });
+    // });
   },
   methods: {
     cardActive(card) {
@@ -104,10 +134,10 @@ export default {
                 <span>
                   {{ skill.description }}
                 </span>
-                <router-link v-if="skill.linkTo" :to="skill.linkTo" class="link">
+                <!-- <router-link v-if="skill.linkTo" :to="skill.linkTo" class="link">
                   Continuar leyendo
                   <ArrowRight />
-                </router-link>
+                </router-link> -->
               </div>
 
               <!-- <div class="Skills--card-body">

@@ -17,7 +17,7 @@ export default {
     let textInformation = '.MyServices--info.information';
     let triggetTarget = document.querySelector('.MyServices').previousElementSibling;
     console.dir(triggetTarget);
-    mm.add("(min-width: 1280px)", () => {
+    mm.add("(min-width: 960px)", () => {
       gsap.set(textTitle, { x: -100, opacity: 0 });
       gsap.to(textTitle, {
         opacity: 1,
@@ -43,6 +43,33 @@ export default {
         },
       });
     });
+    mm.add("(max-width: 960px)", () => {
+      gsap.set(textTitle, { y: 100, opacity: 0 });
+      gsap.to(textTitle, {
+        opacity: 1,
+        y: -15,        
+        scrollTrigger: {
+          trigger: triggetTarget,
+          start: "0 0",
+          end: "25% 0",
+          // pin: true,r
+          // markers: true,
+          scrub: 1
+        },
+      });
+      gsap.set(textInformation, { y: 100, opacity: 0 });
+      gsap.to(textInformation, {
+        opacity: 1,
+        y: 0,        
+        scrollTrigger: {
+          trigger: triggetTarget,
+          start: "0 0",
+          end: "25% 0",
+          // markers: true,
+          scrub: 1
+        },
+      });
+    });
   },
 }
 
@@ -56,40 +83,39 @@ export default {
         <div class="o-grid-row">
           <div class="col size-xs-12 size-sm-12 size-6">
             <div class="MyServices--info titles">
-              <h4>About me</h4>
-              <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+              <h4>Un poco de mi trayectoria</h4>
+              <h2>He trabajado con una amplia gama de organizaciones, desde pequeñas empresas hasta grandes corporaciones.</h2>
             </div>
             <!-- <img src="https://placehold.co/500x350" alt="MyServices Img" class="img-full-responsive"> -->
           </div>
           <div class="col size-xs-12 size-sm-12 size-6">
 
             <div class="MyServices--info information">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ea quae minima temporibus officiis quas
-                ut commodi autem pariatur nihil. Corrupti est quidem odio mollitia?</p>
+              <p>Me considero un apasionado por la programación, lo que me ha llevado a implementar soluciones web eficaces y desarrollar sitios web atractivos y funcionales que ayudan a mis clientes a alcanzar sus objetivos. He trabajado en distintos sectores, como:</p>
               <ul>
                 <li>
                   <span></span>
-                  <p>Lorem, ipsum dolor.</p>
+                  <p>Educativo</p>
                 </li>
                 <li>
                   <span></span>
-                  <p>Lorem, ipsum dolor.</p>
+                  <p>Industrial</p>
                 </li>
                 <li>
                   <span></span>
-                  <p>Lorem, ipsum dolor.</p>
+                  <p>Inmobiliario</p>
                 </li>
                 <li>
                   <span></span>
-                  <p>Lorem, ipsum dolor.</p>
+                  <p>Financiero</p>
                 </li>
                 <li>
                   <span></span>
-                  <p>Lorem, ipsum dolor.</p>
+                  <p>Alimenticio</p>
                 </li>
                 <li>
                   <span></span>
-                  <p>Lorem, ipsum dolor.</p>
+                  <p>Software</p>
                 </li>
               </ul>
               <!-- <router-link to="/about" class="link">Ver más</router-link> -->

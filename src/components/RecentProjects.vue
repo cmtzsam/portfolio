@@ -1,35 +1,45 @@
 <script setup>
 const projects = [
   {
-    tag: 'Marketing Digital 1',
+    tag: 'Marketing Digital',
     logo: "../src/assets/images/hs-logo.png",
-    title: "Crypto website development for DeFi 1",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident quis beatae unde illum ipsum voluptas voluptatum veniam facilis iste, ut quo magni illo culpa. Explicabo cum earum commodi quo excepturi!",
+    title: "Waterford - Integracion del proyecto a Laravel",
+    description: "Se migro de tecnología HTML hacía Laravel (PHP)",
     position: "Desarrollador Front-End",
-    tools: ["HubSpot", "HTML5", "JavaScript"],
+    tools: ["HTML", "JavaScript", "Laravel", "PHP"],
     imageUrl: "https://placehold.co/500x400",
     theme: 'green'
   },
-  {
-    tag: 'Ecommerce 2',
-    logo: "../src/assets/images/hs-logo.png",
-    title: "Crypto website development for DeFi 2",
-    description: "The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.",
-    position: "Desarrollador Front-End",
-    tools: ["HubSpot", "HTML5", "JavaScript"],
-    imageUrl: "https://placehold.co/500x400",
-    theme: 'yellow'
-  },
-  {
-    tag: 'Email Marketing 3',
-    logo: "../src/assets/images/hs-logo.png",
-    title: "Crypto website development for DeFi 3",
-    description: "The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.",
-    position: "Desarrollador Front-End",
-    tools: ["HubSpot", "HTML5", "JavaScript"],
-    imageUrl: "https://placehold.co/500x400",
-    theme: 'purple'
-  },
+  // {
+  //   tag: 'Marketing Digital',
+  //   logo: "../src/assets/images/hs-logo.png",
+  //   title: "Fantasma Films - Desarrollo en HTML e integracion con Wordpress",
+  //   description: "Se desarrollo el sitio web en base a un prototipo proporcionado por el cliente. Al finalizar la codificación el sitio se integro con Wordpress.",
+  //   position: "Desarrollador Front-End",
+  //   tools: ["HTML", "CSS", "JavaScript", "Wordpress", "PHP"],
+  //   imageUrl: "https://placehold.co/500x400",
+  //   theme: 'green'
+  // },
+  // {
+  //   tag: 'Ecommerce 2',
+  //   logo: "../src/assets/images/hs-logo.png",
+  //   title: "Crypto website development for DeFi 2",
+  //   description: "The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.",
+  //   position: "Desarrollador Front-End",
+  //   tools: ["HubSpot", "HTML5", "JavaScript"],
+  //   imageUrl: "https://placehold.co/500x400",
+  //   theme: 'yellow'
+  // },
+  // {
+  //   tag: 'Email Marketing 3',
+  //   logo: "../src/assets/images/hs-logo.png",
+  //   title: "Crypto website development for DeFi 3",
+  //   description: "The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.",
+  //   position: "Desarrollador Front-End",
+  //   tools: ["HubSpot", "HTML5", "JavaScript"],
+  //   imageUrl: "https://placehold.co/500x400",
+  //   theme: 'purple'
+  // },
   // Agrega más objetos de proyectos aquí...
 ];
 </script>
@@ -39,7 +49,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 import Flicking from "@egjs/vue3-flicking";
-import { Fade, Arrow } from "@egjs/flicking-plugins";
+import { Arrow } from "@egjs/flicking-plugins";
 import "@egjs/flicking-plugins/dist/arrow.css";
 
 export default {
@@ -64,16 +74,29 @@ export default {
   },
   mounted() {
 
+    const MAIN_SECTION = document.querySelector('#RecentProjects');
+    // animations
+    let mm = gsap.matchMedia();
+    // var and const
+    let category_h5_current;
+    let category_h5_previous;
+    let title_h3_current;
+    let title_h3_previous;
+    let description_current;
+    let description_previous;
+    let project_details_current;
+    let project_details_previous;
+    let project_pic_current;
+    let project_pic_previous;
+
     // Plugins for Flicking
     this.plugins.push(
-      new Arrow(),
+      // new Arrow(),
       // new Fade()
     );
 
 
     this.$refs.flicking.on('willChange', (e) => {
-      const MAIN_SECTION = document.querySelector('#RecentProjects');
-      let current_Panel = e.currentTarget.currentPanel;
       let current_Project;
       let current_Theme;
       let custom_Class;
@@ -102,29 +125,94 @@ export default {
     });
 
 
+    let animateTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".RecentProjects",
+        scrub: true,
+        start: "top center",
+        toggleActions: "play none none reverse",
+      }
+    });
 
 
-    // animations
-    let mm = gsap.matchMedia();
+    // Animation for h5
+    category_h5_current = document.querySelector('.RecentProjects--project-data h5');
+    title_h3_current = document.querySelector('.RecentProjects--project-data h3');
+    description_current = document.querySelector('.RecentProjects--project-about p');
+    project_details_current = document.querySelectorAll('.RecentProjects--project-details');
+    project_pic_current = document.querySelector('.RecentProjects--project-pic img');
+
+    gsap.set(category_h5_current, { opacity: 0, y: 95 });
+    animateTL.to(category_h5_current, {
+      y: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: MAIN_SECTION.previousElementSibling,
+        start: "20% 0",
+        end: "70% 10%",
+        scrub: 1
+      }
+    });
+
+    gsap.set(title_h3_current, { opacity: 0, y: 120 });
+    animateTL.to(title_h3_current, {
+      y: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: MAIN_SECTION.previousElementSibling,
+        start: "20% 0",
+        end: "70% 10%",
+        scrub: 1
+      }
+    });
+    // Project desc
+
+    gsap.set(description_current, { opacity: 0, y: 160 });
+    animateTL.to(description_current, {
+      y: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: MAIN_SECTION.previousElementSibling,
+        start: "20% 0",
+        end: "70% 10%",
+        scrub: 1
+      }
+    });
+    // Project details
+
+    gsap.set(project_details_current, { opacity: 0, y: 200 });
+    animateTL.to(project_details_current, {
+      y: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: MAIN_SECTION.previousElementSibling,
+        start: "20% 0",
+        end: "70% 10%",
+        scrub: 1
+      }
+    });
+    // Project picture
+    gsap.set(project_pic_current, { y: 200 });
+    animateTL.to(project_pic_current, {
+      y: 0,
+      scrollTrigger: {
+        trigger: MAIN_SECTION.previousElementSibling,
+        start: "20% 0",
+        end: "70% 10%",
+        scrub: 1
+      }
+    });
+
 
     // For desktop up to 960
     mm.add("(min-width: 960px)", () => {
-    // var and const
-    let category_h5_current;
-    let category_h5_previous;
-    let title_h3_current;
-    let title_h3_previous;
-    let description_current;
-    let description_previous;
-    let project_details_current;
-    let project_details_previous;
-    let project_pic_current;
-    let project_pic_previous;      
+
       // Disabled input, just buttons
       // adjust for just disabled in desktop
       // need add ref="flicking" on template      
       this.$refs.flicking.disableInput();
       this.$refs.flicking.duration = 750;
+
 
       // Cuando empieza a cambiar
       this.$refs.flicking.on('moveStart', (e) => {
@@ -187,12 +275,12 @@ export default {
         </div> -->
 
         <Flicking ref="flicking" :options="options" :plugins="plugins" id="carrusel2">
-          <template #viewport>
+          <!-- <template #viewport>
             <div class="arrows-container">
               <span class="arrowfli flicking-arrow-prev is-circle"></span>
               <span @click="startAnim" class="arrowfli flicking-arrow-next is-circle"></span>
             </div>
-          </template>
+          </template> -->
           <div v-for="(project, index) in projects" :key="index" class="panel col size-12">
             <div class="RecentProjects--project">
               <div class="RecentProjects--project-data">
@@ -210,7 +298,7 @@ export default {
               <div class="RecentProjects--project-about">
                 <p>
                   {{ project.description }}
-                  <a href="#!">Continuar leyendo...</a>
+                  <!-- <a href="#!">Continuar leyendo...</a> -->
                 </p>
                 <div class="RecentProjects--project-details">
                   <h4>Herramientas / Tecnologias</h4>

@@ -46,6 +46,8 @@ export default {
       new Pagination({ type: "scroll", renderBullet: this.renderBullet })
     );
 
+    document.querySelector('body').style.overflow = 'hidden';
+
     // animations
     let mm = gsap.matchMedia();
     const text_to_left = document.querySelectorAll('.HeroBanner h1 span.toleft');
@@ -68,45 +70,72 @@ export default {
       gsap.fromTo( text_to_left, { opacity: 0 }, { opacity: 1, duration: .9 } )
       gsap.fromTo( text_to_right, { opacity: 0 }, { opacity: 1, duration: .9 } )
       gsap.fromTo( carousel_el, { x: 20 }, { x: 0, opacity: 1, duration: 1.1 } )
-      gsap.fromTo( text_desc_p, { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 1.1 } )
+      gsap.fromTo( text_desc_p, { x: -20, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 1.1 } )
       gsap.fromTo( text_desc_arrow, { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2 } )
 
       animateTL.to(text_to_left, {
         x: -100,
-        ease: "none",
-        duration: 4,
+        scrollTrigger: {
+          start: '0 0',
+          end: '150 10',
+          trigger: '.HeroBanner',
+          scrub: 1
+        },
       });
       animateTL.to(text_to_right, {
         x: 100,
-        ease: "none",
-        duration: 4,
+        scrollTrigger: {
+          start: '0 0',
+          end: '150 10',
+          trigger: '.HeroBanner',
+          scrub: 1
+        },
+      });
+      animateTL.to([text_desc_p,text_desc_arrow], {
+        y: -15,
+        scrollTrigger: {
+          start: '0 0',
+          end: '150 10',
+          trigger: '.HeroBanner',
+          scrub: 1
+        },
       });
 
     });
 
     // For mobile
-    mm.add("(max-width: 600px)", () => {
-      gsap.to(".my-element .toright", {
-        x: 40,
-        ease: "none",
+    mm.add("(max-width: 960px)", () => {
+      gsap.to(text_to_left, {
+        x: -100,
         scrollTrigger: {
-          trigger: ".my-element .toright",
-          scrub: true
+          start: '0 0',
+          trigger: '.HeroBanner',
+          scrub: 1
         },
       });
-      gsap.to(".my-element .toleft", {
-        x: -40,
-        ease: "none",
+      gsap.to(text_to_right, {
+        x: 50,
         scrollTrigger: {
-          trigger: ".my-element .toleft",
-          scrub: true
+          start: '0 0',
+          trigger: '.HeroBanner',
+          scrub: 1
         },
-      });
+      });      
+      gsap.to(text_desc_p, {
+        y: -75,
+        opacity: 0,
+        scrollTrigger: {
+          start: '0 0',
+          trigger: '.HeroBanner',
+          scrub: 1
+        },
+      });      
     });
 
     // Remove Loading Screen
     setTimeout(() => {
       this.isLoading = false;
+      document.querySelector('body').style.overflow = 'visible';
     }, 1000);    
 
   },
@@ -124,11 +153,11 @@ export default {
 </script>
 
 <template>
-  <!-- <LoadScreen v-if="isLoading" /> -->
+  <LoadScreen v-if="isLoading" />
   <section class="HeroBanner theme-dark" id="HeroBanner" ref="herobanner">
     <div class="o-container">
       <h1 class="my-element">
-        <span class="toleft">Carlos A. Mtz.</span>
+        <span class="toleft">Carlos M.</span>
         <span class="toright">Samaniego</span>
       </h1>
     </div>
@@ -141,7 +170,8 @@ export default {
           <div class="col size-sm-12 size-6">
             <div class="HeroBanner--text">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur iure enim suscipit non quos? Perferendis excepturi, voluptatum repudiandae maiores dolores ea vitae porro consectetur. Architecto eos dolorem quae amet vitae?
+                Soy <span>desarrollador web</span> con más de 8 años de experiencia
+                en la creación y mantenimiento de sitios web, landing pages y soluciones web. 
               </p>
               <span @click="scrollToBottom" class="arrow-down">
                 <ArrowRight  />
@@ -157,13 +187,9 @@ export default {
               <BannerHeroDots />
 
               <Flicking :options="options" :plugins="plugins" id="carrusel">
-                <div class="panel"><img
-                    src="https://naver.github.io/egjs-flicking/assets/images/bg03-1e78fa11dc7996060e3577af814c7e4d.jpg">
-                </div>
                 <div class="panel"><img src="https://placehold.co/600x379"></div>
-                <div class="panel"><img
-                    src="https://naver.github.io/egjs-flicking/assets/images/bg03-1e78fa11dc7996060e3577af814c7e4d.jpg">
-                </div>
+                <div class="panel"><img src="https://placehold.co/600x379"></div>
+                <div class="panel"><img src="https://placehold.co/600x379"></div>
 
                 <template #viewport>
                   <div class="flicking-pagination"></div>
@@ -191,6 +217,7 @@ export default {
 @import "@/assets/sass/components/HeroBanner.sass"
 </style>
 <style lang="css">
+  
 @import url('../../node_modules/@egjs/vue3-flicking/dist/flicking-inline.css');
 @import url('../../node_modules/@egjs/flicking-plugins/dist/flicking-plugins.css');
 

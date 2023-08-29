@@ -2,46 +2,48 @@
   <section class="Statistics theme-dark" id="Statistics">
     <div class="o-container">
 
-      <h2>Aliquet ultricies eget viverra arcu vitae faucibus diam consequat <span>maecenas lorem ispum</span> dolor sit amet nunc.</h2>
+      <h2>Datos de mi trayectoria profesional</h2>
 
       <div class="o-grid-row" ref="infoDiv">
-        <div class="col size-xs-6 size-sm-6 size-3">
+
+        <div class="col size-xs-6 size-sm-6 size-4">
+          <div class="Statistics--info">
+            <h3 v-if="showCounter">
+              <vue3-autocounter ref='counter' :startAmount='0' :endAmount='8' :duration='1.5' prefix='+' suffix=''
+                separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
+            </h3>
+            <p>Años de experiencia</p>
+          </div>
+        </div>        
+        <div class="col size-xs-6 size-sm-6 size-4">
           <!-- Pasar un array -->
           <div class="Statistics--info">
             <h3 v-if="showCounter">
-              <vue3-autocounter ref='counter' :startAmount='0' :endAmount='22' :duration='2' prefix='+' suffix=''
+              <vue3-autocounter ref='counter' :startAmount='0' :endAmount='10' :duration='1.5' prefix='+' suffix=''
                 separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
             </h3>
-            <p>Lorem, ipsum dolor.</p>
+            <p>Proyectos terminados</p>
           </div>
         </div>
-        <div class="col size-xs-6 size-sm-6 size-3">
+        <div class="col size-xs-6 size-sm-6 size-4">
           <div class="Statistics--info">
             <h3 v-if="showCounter">
-              <vue3-autocounter ref='counter' :startAmount='0' :endAmount='100' :duration='2' prefix='+' suffix=''
+              <vue3-autocounter ref='counter' :startAmount='0' :endAmount='20' :duration='1.5' prefix='+' suffix=''
                 separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
             </h3>
-            <p>Lorem, ipsum dolor.</p>
+            <p>Páginas web desarrolladas</p>
           </div>
         </div>
-        <div class="col size-xs-6 size-sm-6 size-3">
+
+        <!-- <div class="col size-xs-6 size-sm-6 size-3">
           <div class="Statistics--info">
             <h3 v-if="showCounter">
-              <vue3-autocounter ref='counter' :startAmount='0' :endAmount='7' :duration='2' prefix='+' suffix=''
+              <vue3-autocounter ref='counter' :startAmount='0' :endAmount='5000' :duration='1.5' prefix='+' suffix=''
                 separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
             </h3>
-            <p>Lorem, ipsum dolor.</p>
+            <p>Líneas de código escritas:p</p>
           </div>
-        </div>
-        <div class="col size-xs-6 size-sm-6 size-3">
-          <div class="Statistics--info">
-            <h3 v-if="showCounter">
-              <vue3-autocounter ref='counter' :startAmount='0' :endAmount='32' :duration='2' prefix='+' suffix=''
-                separator='' decimalSeparator='.' :decimals='0' :autoinit='true' />
-            </h3>
-            <p>Lorem, ipsum dolor.</p>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

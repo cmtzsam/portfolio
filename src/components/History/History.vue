@@ -75,65 +75,9 @@ export default {
       <div class="HistorySection--line theme-jobs">
         <div class="HistorySection--intro">
           <h4>Experiencia Profesional</h4>
-          <p>
+          <!-- <p>
             Lorem consequat reprehenderit ipsum nulla qui pariatur tempor officia ad. Excepteur excepteur pariatur ad
             laborum labore reprehenderit. Do eiusmod sit pariatur nisi. Quis non dolor amet magna eu adipisicing est ex.
-          </p>
-          <!-- <img src="https://placehold.co/250x300" alt="CC"> -->
-        </div>
-
-        <div class="HistorySection--table">
-          <div class="HistorySection--work">
-            <div class="HistorySection--work-company">
-              <h2>Universidad Tecmilenio</h2>
-              <h3>Desarrollador Web</h3>
-            </div>
-            <div class="HistorySection--work-desc">
-              <p>
-                Lorem consequat reprehenderit ipsum nulla qui pariatur tempor officia ad. Excepteur excepteur pariatur
-                ad laborum labore reprehenderit. Do eiusmod sit pariatur nisi. Quis non dolor amet magna eu adipisicing
-                est ex.
-              </p>
-              <h5>Dic. 2021 - Actual</h5>
-            </div>
-          </div>
-          <div class="HistorySection--work">
-            <div class="HistorySection--work-company">
-              <h2>Universidad Tecmilenio</h2>
-              <h3>Desarrollador Web</h3>
-            </div>
-            <div class="HistorySection--work-desc">
-              <p>
-                Lorem consequat reprehenderit ipsum nulla qui pariatur tempor officia ad. Excepteur excepteur pariatur
-                ad laborum labore reprehenderit. Do eiusmod sit pariatur nisi. Quis non dolor amet magna eu adipisicing
-                est ex.
-              </p>
-              <h5>Dic. 2021 - Dic. 2021</h5>
-            </div>
-          </div>
-          <div class="HistorySection--work">
-            <div class="HistorySection--work-company">
-              <h2>Universidad Tecmilenio</h2>
-              <h3>Desarrollador Web</h3>
-            </div>
-            <div class="HistorySection--work-desc">
-              <p>
-                Lorem consequat reprehenderit ipsum nulla qui pariatur tempor officia ad. Excepteur excepteur pariatur
-                ad laborum labore reprehenderit. Do eiusmod sit pariatur nisi. Quis non dolor amet magna eu adipisicing
-                est ex.
-              </p>
-              <h5>Ene - Feb 2020 </h5>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="HistorySection--line theme-school">
-        <div class="HistorySection--intro ">
-          <h4>Preparacion Profesional</h4>
-          <!-- <p>
-            Lorem consequat reprehenderit ipsum nulla qui pariatur tempor officia ad. Excepteur excepteur pariatur ad laborum labore reprehenderit. Do eiusmod sit pariatur nisi. Quis non dolor amet magna eu adipisicing est ex.
           </p> -->
           <!-- <img src="https://placehold.co/250x300" alt="CC"> -->
         </div>
@@ -145,25 +89,65 @@ export default {
               <h3>Desarrollador Web</h3>
             </div>
             <div class="HistorySection--work-desc">
-              <p>
-                Lorem consequat reprehenderit ipsum nulla qui pariatur tempor officia ad. Excepteur excepteur pariatur
-                ad laborum labore reprehenderit. Do eiusmod sit pariatur nisi. Quis non dolor amet magna eu adipisicing
-                est ex.
-              </p>
+              <!-- <p>
+                Mis responsabilidades como desarrollador web incluyen la implementación, actualización y mantenimiento de formularios, la construcción y mantenimiento del sitio web institucional, y el monitoreo, revisión y corrección de leads para la sincronización entre la plataforma de HubSpot y Salesforce. También doy soporte y mantenimiento a distintos micrositios de la universidad.
+              </p> -->
               <h5>Dic. 2021 - Actual</h5>
             </div>
           </div>
           <div class="HistorySection--work">
             <div class="HistorySection--work-company">
-              <h2>Universidad Tecmilenio</h2>
-              <h3>Desarrollador Web</h3>
+              <h2>Ecomsur</h2>
+              <h3>Desarrollador Front End</h3>
             </div>
             <div class="HistorySection--work-desc">
-              <p>
-                Lorem consequat reprehenderit ipsum nulla qui pariatur tempor officia ad. Excepteur excepteur pariatur
-                ad laborum labore reprehenderit. Do eiusmod sit pariatur nisi. Quis non dolor amet magna eu adipisicing
-                est ex.
-              </p>
+              <!-- <p>
+                Mis principales actividades se centraban en el desarrollo de soluciones web para solventar necesidades especificas de los clientes. Adicionalmente, también apoyaba con soporte y mantenimiento a sitios de comercio electrónico, con actividades como: <br><br>
+                - Actualización de productos <br>
+                - Integraciones <br>
+                - Construcción de correos electrónicos                
+              </p> -->
+              <h5>Jun. 2021 - Dic. 2021</h5>
+            </div>
+          </div>
+          <div class="HistorySection--work">
+            <div class="HistorySection--work-company">
+              <h2>Consultores Web</h2>
+              <h3>Desarrollador Front End</h3>
+            </div>
+            <div class="HistorySection--work-desc">
+              <!-- <p>
+                Fui responsable de una variedad de tareas, incluyendo la construcción y mantenimiento de sitios web, la construcción de plantillas para correos electrónicos, la coordinación del equipo de desarrollo y el diseño web en Photoshop. En este rol, pude desarrollar y aplicar mis habilidades en el desarrollo web, el diseño gráfico y la gestión de equipos.
+              </p> -->
+              <h5>Mar. 2015 - Jun. 2021 </h5>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="HistorySection--line theme-school">
+        <div class="HistorySection--intro ">
+          <h4>Educacion</h4>
+
+        </div>
+
+        <div class="HistorySection--table">
+          <div class="HistorySection--work">
+            <div class="HistorySection--work-company">
+              <h2>UANL - Facultad de Ingenieria Mecanica y Electrica</h2>
+              <h3>Ing. en Admin. de Sistemas</h3>
+            </div>
+            <div class="HistorySection--work-desc">
+              <h5>Jun. 2015 - Jun. 2021</h5>
+            </div>
+          </div>
+          <div class="HistorySection--work">
+            <div class="HistorySection--work-company">
+              <h2>UANL - Escuela Industrial y Preparatoria Tecnica "Alvaro Obregon"</h2>
+              <h3>Tec. en TIC. enfocado en Progr. Web</h3>
+            </div>
+            <div class="HistorySection--work-desc">
               <h5>Dic. 2021 - Dic. 2021</h5>
             </div>
           </div>
@@ -173,40 +157,27 @@ export default {
 
       <div class="HistorySection--line theme-courses">
         <div class="HistorySection--intro ">
-          <h4>Preparacion Profesional</h4>
-          <!-- <p>
-            Lorem consequat reprehenderit ipsum nulla qui pariatur tempor officia ad. Excepteur excepteur pariatur ad laborum labore reprehenderit. Do eiusmod sit pariatur nisi. Quis non dolor amet magna eu adipisicing est ex.
-          </p> -->
-          <!-- <img src="https://placehold.co/250x300" alt="CC"> -->
+          <h4>Cursos y Certificaciones</h4>
+
         </div>
 
         <div class="HistorySection--table">
           <div class="HistorySection--work">
             <div class="HistorySection--work-company">
-              <h2>Universidad Tecmilenio</h2>
-              <h3>Desarrollador Web</h3>
+              <h2>UANL - Facultad de Ingenieria Mecanica y Electrica</h2>
+              <h3>Desarrollo sobre Android</h3>
             </div>
             <div class="HistorySection--work-desc">
-              <p>
-                Lorem consequat reprehenderit ipsum nulla qui pariatur tempor officia ad. Excepteur excepteur pariatur
-                ad laborum labore reprehenderit. Do eiusmod sit pariatur nisi. Quis non dolor amet magna eu adipisicing
-                est ex.
-              </p>
-              <h5>Dic. 2021 - Actual</h5>
+              <h5>Ago. - Nov. 2018</h5>
             </div>
           </div>
           <div class="HistorySection--work">
             <div class="HistorySection--work-company">
-              <h2>Universidad Tecmilenio</h2>
-              <h3>Desarrollador Web</h3>
+              <h2>Udemy</h2>
+              <h3>Desarrollo con Gatsby</h3>
             </div>
             <div class="HistorySection--work-desc">
-              <p>
-                Lorem consequat reprehenderit ipsum nulla qui pariatur tempor officia ad. Excepteur excepteur pariatur
-                ad laborum labore reprehenderit. Do eiusmod sit pariatur nisi. Quis non dolor amet magna eu adipisicing
-                est ex.
-              </p>
-              <h5>Dic. 2021 - Dic. 2021</h5>
+              <h5>Dic. 2021</h5>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@
     <div class="o-container">
       <nav class="HeaderMainMenu--nav">
         <a class="HeaderMainMenu--logo" href="#!">
-          <img src="../assets/images/logo.png" alt="Codificarlos" class="img-full-responsive">
+          <img src="../assets/images/logo-codificarlos-white.png" alt="Codificarlos" class="img-full-responsive">
           <!-- <img src="https://placehold.co/220x40" alt="Codificarlos" class="img-full-responsive"> -->
         </a>
         <div class="HeaderMainMenu--openmenu">
@@ -29,7 +29,8 @@
 
             <div> Search </div>
             <div> Favorites </div>
-            <router-link to="/about" class="contact">Contacto</router-link>
+            <!-- <router-link to="/about" class="contact">Contacto</router-link> -->
+            <a href="mailto:codificarlos.contacto@gmail.com" class="contact">Contacto</a>
 
           </div>
 
